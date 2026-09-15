@@ -8,3 +8,7 @@ A React project for the survey paper webpage.
 npm install
 npm run dev
 ```
+
+## Publish
+
+https://csc754-survey-paper-webpage.netlify.app/
