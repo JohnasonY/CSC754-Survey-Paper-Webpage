@@ -1,7 +1,84 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header p {
+  margin: 12px 0 0;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+
+.milestones h2 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+th {
+  background: #f3f4f6;
+  color: #111827;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td:first-child {
+  font-weight: 700;
+  color: #111827;
+}
+
+td:first-child a,
+.back-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+td:first-child a:hover,
+.back-link:hover {
+  text-decoration: underline;
+}
+
+td:nth-child(2) {
+  color: #4b5563;
+}
+
+td:nth-child(3) {
+  width: 180px;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-weight: 700;
 }

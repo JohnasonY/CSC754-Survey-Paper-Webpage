@@ -9,6 +9,6 @@ npm install
 npm run dev
 ```
 
-## Publish
+## Deployed by Netlify
 
 https://csc754-survey-paper-webpage.netlify.app/
