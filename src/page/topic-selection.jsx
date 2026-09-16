@@ -1,6 +1,6 @@
 import "./topic-selection.css";
 
-const topicSelectionPdf = "../public/Test.pdf";
+const topicSelectionPdf = "/Test.pdf";
 
 function TopicSelection({ milestone }) {
   return (
