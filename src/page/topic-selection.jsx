@@ -1,6 +1,6 @@
 import "./topic-selection.css";
 
-const topicSelectionPdf = "/Test.pdf";
+const topicSelectionPdf = "/CSC 754 Lit Review Brief Overview.pdf";
 
 function TopicSelection({ milestone }) {
   return (
