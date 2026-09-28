@@ -13,7 +13,7 @@ function Bibliography() {
         {bibliography.map((item) => (
           <li key={item.link}>
             <a href={item.link} target="_blank">
-              {item.APAcitation}
+              {item.APA}
             </a>
           </li>
         ))}
