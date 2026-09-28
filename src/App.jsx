@@ -89,6 +89,7 @@ function App() {
     <main className="app">
       <header className="page-header">
         <h1>CSC754 Survey Paper</h1>
+        <h1>Topic: Cellular Automata in Traffic Modeling</h1>
         <h2>Group Members: Brendan Coughlan, Jiaxing Rong</h2>
       </header>
 
