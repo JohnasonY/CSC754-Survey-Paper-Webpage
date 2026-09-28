@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import TopicSelection from "./page/topic-selection.jsx";
+import Bibliography from "./page/bibliography.jsx";
 
 const pages = {
   "topic-selection": TopicSelection,
+  bibliography: Bibliography,
 };
 
 const milestones = [
