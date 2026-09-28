@@ -1,6 +1,6 @@
 const bibliography = [
   {
-    APAcitation: "test",
+    APA: "test",
     link: "https://www.google.com/",
   },
 ];
