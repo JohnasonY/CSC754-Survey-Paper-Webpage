@@ -1,3 +1,5 @@
+import "./bibliography.css";
+
 const bibliography = [
   {
     APA: "Barlovic, R., Santen, L., Schadschneider, A., & Schreckenberg, M. (1998). “Metastable states in cellular automata for traffic flow.” ",
@@ -201,21 +203,49 @@ const bibliography = [
   },
 ];
 
-function Bibliography() {
+export default function Bibliography() {
   return (
-    <>
-      <h1>Topic: Cellular Automata in Traffic Modeling</h1>
-      <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-        {bibliography.map((item) => (
-          <li key={item.link}>
-            <a href={item.link} target="_blank">
-              {item.APA}
+    <main className="bibliography-page">
+      <header className="bibliography-header">
+        <div>
+          <p className="section-label">Literature</p>
+          <h2>Bibliography</h2>
+        </div>
+
+        <p className="paper-count">
+          {bibliography.length} papers
+        </p>
+      </header>
+
+      <p className="bibliography-description">
+        Literature collected for our survey of cellular automata
+        and their applications to traffic modeling.
+      </p>
+
+      <div className="bibliography-list">
+        {bibliography.map((paper, index) => (
+          <article className="bibliography-item" key={index}>
+            <span className="paper-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <div className="paper-info">
+              <p className="citation">
+                {paper.APA}
+              </p>
+            </div>
+
+            <a
+              className="paper-link"
+              href={paper.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View paper <span>↗</span>
             </a>
-          </li>
+          </article>
         ))}
-      </ul>
-    </>
+      </div>
+    </main>
   );
 }
-
-export default Bibliography;

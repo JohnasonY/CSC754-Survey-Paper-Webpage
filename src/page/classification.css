@@ -1,0 +1,149 @@
+.classification-page {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+
+  color: #17201e;
+}
+
+/* HEADER */
+
+.classification-header {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+
+  color: #176b5b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.classification-header h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.classification-intro {
+  margin: 25px 0 0;
+
+  color: #5e6864;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* CLASSIFICATIONS */
+
+.classification-list {
+  border-top: 1px solid #cfd5d2;
+}
+
+.classification-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 90px;
+  gap: 25px;
+
+  padding: 32px 0;
+
+  border-bottom: 1px solid #d9dedb;
+}
+
+/* NUMBER */
+
+.classification-number {
+  padding-top: 4px;
+
+  color: #176b5b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+}
+
+/* CONTENT */
+
+.classification-content h3 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.classification-content>p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #68716e;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* PAPER COUNT */
+
+.classification-count {
+  justify-self: end;
+  padding-top: 5px;
+
+  color: #8a9390;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* PAPERS WITHIN CATEGORY */
+
+.category-papers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid #e1e5e3;
+}
+
+.category-papers a {
+  color: #45504c;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.category-papers a:hover {
+  color: #176b5b;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .classification-page {
+    width: calc(100% - 32px);
+    padding: 50px 0 70px;
+  }
+
+  .classification-header {
+    margin-bottom: 45px;
+  }
+
+  .classification-item {
+    grid-template-columns: 35px 1fr;
+    gap: 14px;
+
+    padding: 26px 0;
+  }
+
+  .classification-count {
+    grid-column: 2;
+
+    justify-self: start;
+    padding: 0;
+  }
+}

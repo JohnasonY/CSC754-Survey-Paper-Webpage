@@ -1,0 +1,121 @@
+.annotated-page {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+  color: #17201e;
+}
+
+.annotated-header {
+  max-width: 720px;
+  margin-bottom: 60px;
+}
+
+.annotated-header h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.annotated-header>p:last-child {
+  margin: 24px 0 0;
+
+  color: #5e6864;
+  line-height: 1.7;
+}
+
+/* LIST */
+
+.annotation-list {
+  border-top: 1px solid #cfd5d2;
+}
+
+.annotation {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 25px;
+
+  padding: 38px 0 45px;
+
+  border-bottom: 1px solid #d9dedb;
+}
+
+.annotation-number {
+  color: #999f9c;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+}
+
+.annotation-content {
+  max-width: 800px;
+}
+
+.annotation-citation {
+  margin: 0 0 30px;
+
+  color: #303936;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ANNOTATION */
+
+.annotation-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+
+  margin-bottom: 25px;
+}
+
+.annotation-notes h3 {
+  margin: 0 0 8px;
+
+  color: #176b5b;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.annotation-notes p {
+  margin: 0;
+
+  color: #68716e;
+  font-size: 0.87rem;
+  line-height: 1.65;
+}
+
+.paper-link {
+  color: #176b5b;
+
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.paper-link:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .annotated-page {
+    width: calc(100% - 32px);
+    padding: 50px 0 70px;
+  }
+
+  .annotation {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+  }
+
+  .annotation-notes {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}

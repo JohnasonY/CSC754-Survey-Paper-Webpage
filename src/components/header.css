@@ -1,0 +1,191 @@
+.site-header {
+  width: 100%;
+  background: #f7f7f3;
+  color: #17201e;
+  border-bottom: 1px solid #d9dedb;
+}
+
+/* Keeps header content aligned with page content */
+.header-inner,
+.nav-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* CSC 754 ---------------- Literature Review */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 0 16px;
+  border-bottom: 1px solid #d9dedb;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7471;
+}
+
+/* Main header area */
+.header-main {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 80px;
+  align-items: end;
+
+  padding: 42px 0;
+}
+
+.header-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header-title h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.header-title h1 span {
+  display: block;
+  color: #176b5b;
+}
+
+.header-details {
+  padding-bottom: 3px;
+}
+
+.header-details > p:first-child {
+  max-width: 430px;
+  margin: 0;
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #626c68;
+}
+
+.header-authors {
+  display: flex;
+  gap: 8px;
+
+  margin: 20px 0 0;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #28312f;
+}
+
+.header-authors span {
+  color: #a0a7a4;
+}
+
+/* NAVIGATION */
+
+.site-nav {
+  border-top: 1px solid #d9dedb;
+  background: #f7f7f3;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav-inner a {
+  position: relative;
+  padding: 17px 0;
+
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: #68716e;
+  text-decoration: none;
+
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
+}
+
+.nav-inner a:hover {
+  color: #176b5b;
+}
+
+.nav-inner a.active {
+  color: #17201e;
+}
+
+.nav-inner a.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+  background: #176b5b;
+}
+
+/* TABLET / MOBILE */
+
+@media (max-width: 760px) {
+  .header-inner,
+  .nav-inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .header-main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    padding: 32px 0;
+  }
+
+  .header-title h1 {
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
+  }
+
+  .header-details > p:first-child {
+    max-width: 550px;
+  }
+
+  .nav-inner {
+    gap: 28px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-inner a {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-top {
+    padding-top: 16px;
+  }
+
+  .header-main {
+    padding: 27px 0 30px;
+  }
+
+  .header-title h1 {
+    line-height: 1;
+  }
+
+  .header-authors {
+    flex-wrap: wrap;
+  }
+}

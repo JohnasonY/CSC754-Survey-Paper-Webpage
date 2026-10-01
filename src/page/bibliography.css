@@ -1,0 +1,152 @@
+.bibliography-page {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 70px 0 100px;
+
+  color: #17201e;
+}
+
+/* HEADER */
+
+.bibliography-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.section-label {
+  margin: 0 0 12px;
+
+  color: #176b5b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bibliography-header h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.paper-count {
+  margin: 0 0 5px;
+
+  color: #7a837f;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.bibliography-description {
+  max-width: 600px;
+
+  margin: 25px 0 55px;
+
+  color: #5e6864;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* LIST */
+
+.bibliography-list {
+  border-top: 1px solid #cfd5d2;
+}
+
+.bibliography-item {
+  display: grid;
+  grid-template-columns: 55px minmax(0, 1fr) 110px;
+  gap: 24px;
+  align-items: start;
+
+  padding: 24px 0;
+
+  border-bottom: 1px solid #d9dedb;
+}
+
+/* NUMBER */
+
+.paper-number {
+  padding-top: 2px;
+
+  color: #9aa29f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+}
+
+/* CITATION */
+
+.paper-info {
+  min-width: 0;
+}
+
+.citation {
+  max-width: 780px;
+
+  margin: 0;
+
+  color: #3f4945;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* LINK */
+
+.paper-link {
+  justify-self: end;
+
+  color: #176b5b;
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.paper-link span {
+  display: inline-block;
+
+  margin-left: 3px;
+
+  transition: transform 150ms ease;
+}
+
+.paper-link:hover {
+  text-decoration: underline;
+}
+
+.paper-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .bibliography-page {
+    width: calc(100% - 32px);
+    padding: 50px 0 70px;
+  }
+
+  .bibliography-description {
+    margin-bottom: 40px;
+  }
+
+  .bibliography-item {
+    grid-template-columns: 35px 1fr;
+    gap: 14px;
+
+    padding: 22px 0;
+  }
+
+  .paper-link {
+    grid-column: 2;
+
+    justify-self: start;
+
+    margin-top: -3px;
+  }
+}
