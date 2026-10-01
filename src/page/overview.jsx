@@ -1,11 +1,10 @@
 import "./overview.css";
-
 const milestones = [
   {
     title: "Topic Selection",
     date: "Sep 17",
     status: "complete",
-    href: "#/topic-selection",
+    href: "#/overview",
   },
   {
     title: "Bibliography",
@@ -23,13 +22,13 @@ const milestones = [
     title: "Classification",
     date: "Oct 29",
     status: "upcoming",
-    href: "#/detailed-comments-and-classification",
+    href: "#/classification",
   },
   {
     title: "Presentation",
     date: "Nov 12 & 19",
     status: "upcoming",
-    href: "#/presentation-slides",
+    href: "#/presentation",
   },
   {
     title: "Final Paper",
