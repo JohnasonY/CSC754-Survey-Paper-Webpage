@@ -1,87 +1,78 @@
+import { bibliography } from "../data/bibliography.js";
+import { annotations } from "../data/annotations.js";
 import "./annotated-bibliography.css";
 
-const annotatedPapers = [
-  {
-    id: 1,
-
-    // Bibliographic information
-    citation: "Paper citation goes here...",
-    link: "https://...",
-
-    // Your annotation
-    summary:
-      "Temporary annotation summarizing the purpose and approach of the paper.",
-
-    result:
-      "Temporary note describing the paper's primary result or contribution.",
-
-    relevance:
-      "Temporary note explaining why this paper is relevant to our survey.",
-  },
-
-  {
-    id: 2,
-    citation: "Another paper citation goes here...",
-    link: "https://...",
-    summary: "Temporary summary.",
-    result: "Temporary key result.",
-    relevance: "Temporary relevance note.",
-  },
-];
+const annotationsById = new Map(annotations.map((paper) => [paper.id, paper]));
+const placeholder = {
+  summary: "Summary to be added.",
+  results: ["Key results to be added."],
+  relevance: "Relevance to be added.",
+};
 
 export default function AnnotatedBibliography() {
   return (
     <main className="annotated-page">
       <header className="annotated-header">
-        <p className="section-label">Literature</p>
-        <h2>Annotated Bibliography</h2>
-
-        <p>
-          Selected literature with notes summarizing each paper's
-          methods, results, and relevance to our survey.
-        </p>
+        <div>
+          <p className="section-label">Literature</p>
+          <h2>Annotated Bibliography</h2>
+        </div>
+        <p className="paper-count">{bibliography.length} papers</p>
       </header>
 
-      <section className="annotation-list">
-        {annotatedPapers.map((paper, index) => (
-          <article className="annotation" key={paper.id}>
-            <span className="annotation-number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+      <p className="annotated-description">
+        Notes on cellular automata in traffic modeling.
+      </p>
 
-            <div className="annotation-content">
-              <p className="annotation-citation">
-                {paper.citation}
-              </p>
+      <section className="annotation-list" aria-label="Annotated papers">
+        {bibliography.map((paper, index) => {
+          const id = index + 1;
+          const notes = annotationsById.get(id) ?? placeholder;
 
-              <div className="annotation-notes">
-                <div>
-                  <h3>Summary</h3>
-                  <p>{paper.summary}</p>
+          return (
+            <article className="annotation" id={`paper-${id}`} key={id}>
+              <span className="annotation-number">
+                {String(id).padStart(2, "0")}
+              </span>
+
+              <div className="annotation-content">
+                <div className="annotation-topline">
+                  <p className="annotation-citation">{paper.APA}</p>
+                  <a
+                    href={paper.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="paper-link"
+                    aria-label={`View paper ${id}`}
+                  >
+                    View paper <span aria-hidden="true">&#8599;</span>
+                  </a>
                 </div>
 
-                <div>
-                  <h3>Key Result</h3>
-                  <p>{paper.result}</p>
-                </div>
+                <div className="annotation-notes">
+                  <div className="annotation-summary">
+                    <h3>Summary</h3>
+                    <p>{notes.summary}</p>
+                  </div>
 
-                <div>
-                  <h3>Relevance</h3>
-                  <p>{paper.relevance}</p>
+                  <div>
+                    <h3>Key Results</h3>
+                    <ul>
+                      {notes.results.map((result) => (
+                        <li key={result}>{result}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3>Relevance</h3>
+                    <p>{notes.relevance}</p>
+                  </div>
                 </div>
               </div>
-
-              <a
-                href={paper.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="paper-link"
-              >
-                View paper ↗
-              </a>
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </section>
     </main>
   );
