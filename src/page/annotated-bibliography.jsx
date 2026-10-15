@@ -14,6 +14,7 @@ const annotatedPapers = [
       "Demonstrates that small disturbances can trigger a transition from stable-looking traffic to a traffic jam.",
       "Explains how slow-to-start rules help reproduce metastability and reduced traffic flow after congestion develops.",
     ],
+    important: true,
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ const annotatedPapers = [
       "Demonstrates that slow-to-start behavior changes how traffic congestion develops and clears.",
       "Illustrates how cellular automata can model the effects of both driver behavior and highway junctions.",
     ],
+    important: true,
   },
   {
     id: 4,
@@ -50,6 +52,7 @@ const annotatedPapers = [
       "Identifies a transition between freely moving traffic and a gridlocked state as traffic density increases.",
       "Demonstrates that simple local movement rules can produce large-scale traffic organization and congestion.",
     ],
+    important: true,
   },
   {
     id: 5,
@@ -86,6 +89,7 @@ const annotatedPapers = [
       "Demonstrates that cellular automaton simulations can be used to compare and optimize signal-control strategies.",
       "Highlights the importance of coordinating traffic lights to improve overall network performance.",
     ],
+    important: true,
   },
   {
     id: 8,
@@ -98,6 +102,7 @@ const annotatedPapers = [
       "Demonstrates that small modifications to driving rules can create different traffic patterns.",
       "Provides insight into how delayed acceleration affects vehicle spacing and traffic flow.",
     ],
+    important: true,
   },
   {
     id: 9,
@@ -110,6 +115,7 @@ const annotatedPapers = [
       "Demonstrates that vehicle entry and exit influence the distribution of traffic density along a highway.",
       "Extends basic cellular automaton traffic models to include more realistic highway infrastructure.",
     ],
+    important: true,
   },
   {
     id: 10,
@@ -122,6 +128,7 @@ const annotatedPapers = [
       "Shows how vehicle density and local movement rules influence the development of jams.",
       "Contributes to the theoretical understanding of traffic phase transitions in cellular automaton models.",
     ],
+    important: true,
   },
   {
     id: 11,
@@ -134,6 +141,7 @@ const annotatedPapers = [
       "Shows how individual vehicle movements can produce larger traffic patterns across a city.",
       "Provides a foundation for using cellular automata in practical urban traffic simulation.",
     ],
+    important: true,
   },
   {
     id: 12,
@@ -206,6 +214,7 @@ const annotatedPapers = [
       "Explores self-organization as an alternative to fixed or centrally optimized signal control.",
       "Demonstrates the potential of elementary cellular automata for studying traffic-light coordination.",
     ],
+    important: true,
   },
   {
     id: 18,
@@ -242,6 +251,7 @@ const annotatedPapers = [
       "Investigates traffic patterns that arise from interactions between individual vehicles.",
       "Provides a foundation for later cellular automaton models that aim to reproduce observed traffic behavior.",
     ],
+    important: true,
   },
   {
     id: 21,
@@ -266,6 +276,7 @@ const annotatedPapers = [
       "Investigates interactions and synchronization between two highway lanes.",
       "Extends microscopic traffic modeling beyond the limitations of single-lane road simulations.",
     ],
+    important: true,
   },
   {
     id: 23,
@@ -278,6 +289,7 @@ const annotatedPapers = [
       "Distinguishes models with qualitative agreement from those that reproduce macroscopic and microscopic traffic characteristics.",
       "Demonstrates the importance of empirical testing when evaluating the accuracy of traffic cellular automata.",
     ],
+    important: true,
   },
   {
     id: 24,
@@ -641,6 +653,17 @@ export default function AnnotatedBibliography() {
             <article className="annotation" id={`paper-${id}`} key={id}>
               <span className="annotation-number">
                 {String(id).padStart(2, "0")}
+
+                {notes.important && (
+                  <span
+                    className="important-star"
+                    title="Important paper"
+                    aria-label="Important paper"
+                  >
+                    ★
+                  </span>
+                )}
+
               </span>
 
               <div className="annotation-content">

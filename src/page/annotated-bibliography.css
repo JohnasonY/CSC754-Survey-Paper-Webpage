@@ -54,6 +54,15 @@
   color: #9aa29f;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.85rem;
+  display: flex;
+  align-items: top;
+  gap: 8px;
+}
+
+.important-star {
+  color: #c89535;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .annotation-content {
@@ -72,9 +81,10 @@
   max-width: 780px;
   margin: 0;
   color: #3f4945;
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.65;
   overflow-wrap: anywhere;
+  font-weight: bold;
 }
 
 .annotation-notes {
@@ -110,7 +120,7 @@
   padding-left: 20px;
 }
 
-.annotation-notes li + li {
+.annotation-notes li+li {
   margin-top: 6px;
 }
 
