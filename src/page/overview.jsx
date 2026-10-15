@@ -9,19 +9,19 @@ const milestones = [
   {
     title: "Bibliography",
     date: "Oct 1",
-    status: "current",
+    status: "complete",
     href: "#/bibliography",
   },
   {
     title: "Annotated Bibliography",
     date: "Oct 15",
-    status: "upcoming",
+    status: "complete",
     href: "#/annotated-bibliography",
   },
   {
     title: "Classification",
     date: "Oct 29",
-    status: "upcoming",
+    status: "current",
     href: "#/classification",
   },
   {
