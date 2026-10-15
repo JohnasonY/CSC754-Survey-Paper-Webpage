@@ -5,87 +5,303 @@ import "./annotated-bibliography.css";
 const annotatedPapers = [
   {
     id: 1,
-    citation: "Biham et al. (1992) - Self-organization and a dynamical transition in traffic-flow models",
-    link: "https://arxiv.org/abs/cond-mat/9206001",
+    citation: "Barlovic, R., Santen, L., Schadschneider, A., & Schreckenberg, M. (1998). Metastable states in cellular automata for traffic flow.",
+    link: "https://arxiv.org/abs/cond-mat/9804170",
     summary:
-      "This study investigates a two-dimensional cellular automaton model in which vehicles move according to simple local rules. It examines self-organization and the transition between moving and congested traffic states, demonstrating how local vehicle interactions can produce large-scale traffic patterns. A limitation is that the simplified model does not capture all the behavioral details of real highway traffic.",
+      "This paper studies metastable traffic states using a cellular automaton model with slow-to-start behavior. The authors examine how traffic can remain in a high-flow state even at relatively high vehicle densities, and how disturbances can cause that state to break down into congestion.",
+    results: [
+      "Shows that free-flowing and congested traffic states can exist under similar density conditions.",
+      "Demonstrates that small disturbances can trigger a transition from stable-looking traffic to a traffic jam.",
+      "Explains how slow-to-start rules help reproduce metastability and reduced traffic flow after congestion develops.",
+    ],
   },
   {
     id: 2,
-    citation: "Benjamin et al. (1996) - Cellular automata models of traffic flow along a highway containing a junction",
-    link: "https://arxiv.org/abs/cond-mat/9605157",
+    citation: "Barlovic, R., Schadschneider, A., & Schreckenberg, M. (2001). Random walk theory of jamming in a cellular automaton model for traffic flow. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0102519",
     summary:
-      "This paper explores extensions of basic traffic cellular automata models, particularly slow-to-start behavior and the effects of a highway junction. It investigates how vehicle movement rules influence queue formation and junction efficiency, showing how cellular automata can represent both driver behavior and infrastructure-related congestion. Its findings depend on the simplified junction and driving rules studied.",
+      "This paper uses random walk theory to analyze how traffic jams form, grow, and disappear in a cellular automaton traffic model. Instead of relying only on simulations, the authors study the changing boundaries of traffic jams to better understand their behavior.",
+    results: [
+      "Connects the movement of traffic jam boundaries to random walk processes.",
+      "Provides a theoretical way to study the lifetime and evolution of traffic jams.",
+      "Helps explain how random vehicle movements influence whether a jam grows or disappears.",
+    ],
   },
   {
     id: 3,
-    citation: "Eisenblätter et al. (1997) - Jamming transition in a cellular automaton model for traffic flow",
-    link: "https://arxiv.org/abs/cond-mat/9706041",
+    citation: "Benjamin, S. C., Johnson, N. F., & Hui, P. M. (1996). Cellular automata models of traffic flow along a highway containing a junction. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/9605157",
     summary:
-      "This paper examines the transition between free-flowing and congested traffic in a cellular automaton framework. It contributes to understanding how traffic density and vehicle interactions influence congestion and traffic flow regimes. Its primary contribution is theoretical rather than the direct validation of a practical road-network simulation.",
+      "This paper investigates cellular automaton models of highway traffic with a junction. It considers how different driving rules, including slow-to-start behavior, affect vehicle movement and congestion near the junction. The study uses simulations to understand how local driving behavior interacts with road infrastructure.",
+    results: [
+      "Shows that junctions can create queues and reduce traffic flow even when the surrounding highway is relatively clear.",
+      "Demonstrates that slow-to-start behavior changes how traffic congestion develops and clears.",
+      "Illustrates how cellular automata can model the effects of both driver behavior and highway junctions.",
+    ],
   },
   {
     id: 4,
-    citation: "Barlovic et al. (1998) - Metastable states in cellular automata for traffic flow",
-    link: "https://arxiv.org/abs/cond-mat/9804170",
+    citation: "Biham, O., Middleton, A. A., & Levine, D. (1992). Self-organization and a dynamical transition in traffic-flow models.",
+    link: "https://arxiv.org/abs/cond-mat/9206001",
     summary:
-      "This study investigates metastable traffic states using a cellular automaton model. It explains how apparently stable traffic flow can persist under certain conditions but break down when disturbed, helping clarify the onset of congestion. The work highlights the limitations of models that distinguish only between free-flowing and jammed traffic, although its scope is primarily theoretical.",
+      "This paper introduces a two-dimensional cellular automaton model of city traffic. Vehicles move in two perpendicular directions on a grid and follow simple movement rules. The authors investigate how increasing the number of vehicles changes the system from freely moving traffic to a completely blocked state.",
+    results: [
+      "Shows that a simple traffic system can organize itself into moving patterns without centralized control.",
+      "Identifies a transition between freely moving traffic and a gridlocked state as traffic density increases.",
+      "Demonstrates that simple local movement rules can produce large-scale traffic organization and congestion.",
+    ],
   },
   {
     id: 5,
-    citation: "Chowdhury et al. (1999) - Spatio-temporal organization of vehicles in a cellular automata model of traffic with 'slow-to-start' rule",
-    link: "https://arxiv.org/abs/cond-mat/9812148",
+    citation: "Boccara, N., & Fukś, H. (2000). Critical behavior of a cellular automaton highway traffic model. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/9911039",
     summary:
-      "This paper compares a slow-to-start cellular automaton model with the standard Nagel–Schreckenberg framework. It examines vehicle headways, jam sizes, and spatial and temporal traffic patterns, demonstrating how small changes in local transition rules can significantly affect collective traffic behavior. The findings emphasize the importance of driver response and acceleration behavior but remain dependent on the models' assumptions.",
+      "This paper studies critical behavior in a cellular automaton model of highway traffic. The authors investigate how the overall traffic flow changes with vehicle density and examine the transition between freely moving and congested traffic.",
+    results: [
+      "Identifies critical behavior associated with changes in traffic density.",
+      "Shows how traffic flow can change sharply when the number of vehicles reaches certain conditions.",
+      "Provides a theoretical framework for studying traffic transitions using simple cellular automaton rules.",
+    ],
   },
   {
     id: 6,
-    citation: "Esser and Schreckenberg (1997) - Microscopic simulation of urban traffic based on cellular automata",
-    link: "https://www.researchgate.net/publication/2584087_Microscopic_Simulation_Of_Urban_Traffic_Based_On_Cellular_Automata",
+    citation: "Boccara, N., Fukś, H., & Zeng, Q. (1997). Car accidents and number of stopped cars due to road blockage on a one-lane highway. Journal of Physics A: Mathematical and General, 30(10), 3329–3332.",
+    link: "https://arxiv.org/abs/adap-org/9704001",
     summary:
-      "This paper applies cellular automata to microscopic urban traffic simulation, connecting individual vehicle movement rules with interactions across an urban road network. It demonstrates the practical appeal and scalability of cellular automata for city traffic modeling. However, assumptions about roads, intersections, and vehicle movements may limit the realism of the simulated network.",
+      "This paper examines the effects of road blockages on traffic in a one-lane cellular automaton model. The authors study how accidents or obstacles interrupt vehicle movement and cause cars to stop behind the blocked section of road.",
+    results: [
+      "Shows how a local road blockage can produce a queue of stopped vehicles.",
+      "Investigates the relationship between traffic conditions and the number of cars affected by an obstruction.",
+      "Demonstrates how cellular automata can represent traffic disruption caused by accidents or blocked roads.",
+    ],
   },
   {
     id: 7,
-    citation: "Brockfeld et al. (2001) - Optimizing traffic lights in a cellular automaton model for city traffic",
+    citation: "Brockfeld, E., Barlovic, R., Schadschneider, A., & Schreckenberg, M. (2001). Optimizing traffic lights in a cellular automaton model for city traffic. Physical Review E, 64(5), Article 056132.",
     link: "https://arxiv.org/abs/cond-mat/0107056",
     summary:
-      "This study investigates traffic-light optimization using a cellular automaton model of urban traffic. It demonstrates how simulation can evaluate traffic-control strategies and their effects on network performance, extending cellular automata from traffic-flow description to operational decision-making. The effectiveness of the strategies depends on the modeled network, signal rules, and performance measures.",
+      "This paper uses a cellular automaton model of urban traffic to investigate traffic-light optimization. The authors simulate vehicles moving through a city road network and examine how different signal settings influence traffic flow and congestion.",
+    results: [
+      "Shows that traffic-light timing has a significant effect on traffic movement through a city network.",
+      "Demonstrates that cellular automaton simulations can be used to compare and optimize signal-control strategies.",
+      "Highlights the importance of coordinating traffic lights to improve overall network performance.",
+    ],
   },
   {
     id: 8,
-    citation: "Diedrich et al. (2000) - Effect of on- and off-ramps in cellular automata models for traffic flow",
-    link: "https://arxiv.org/abs/cond-mat/0001196",
+    citation: "Chowdhury, D., Santen, L., Schadschneider, A., Sinha, S., & Pasupathy, A. (1999). Spatio-temporal organization of vehicles in a cellular automata model of traffic with ‘slow-to-start’ rule. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/9812148",
     summary:
-      "This paper examines how highway entry and exit ramps influence traffic dynamics in cellular automaton models. By incorporating merging and diverging movements, it provides a more representative description of highway traffic and localized congestion. Its conclusions depend on how ramp interactions and vehicle entry and exit are implemented.",
+      "This paper studies a cellular automaton traffic model that includes a slow-to-start rule, meaning stopped vehicles may take additional time to begin moving again. The authors compare its behavior with a standard traffic model and examine vehicle spacing, traffic jams, and changes in traffic patterns over time.",
+    results: [
+      "Shows that slow-to-start behavior changes the formation and structure of traffic jams.",
+      "Demonstrates that small modifications to driving rules can create different traffic patterns.",
+      "Provides insight into how delayed acceleration affects vehicle spacing and traffic flow.",
+    ],
   },
   {
     id: 9,
-    citation: "Knospe et al. (2000) - Towards a realistic microscopic description of highway traffic",
-    link: "https://arxiv.org/abs/cond-mat/0012204",
+    citation: "Diedrich, G., Santen, L., Schadschneider, A., & Zittartz, J. (2000). Effect of on- and off-ramps in cellular automata models for traffic flow. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0001196",
     summary:
-      "This paper develops a more realistic microscopic cellular automaton description of highway traffic by representing vehicle behavior in greater detail than basic models. It helps explain how improved driving rules can reproduce observed traffic phenomena and provides a foundation for later multi-lane traffic models. A central challenge is balancing behavioral realism, computational simplicity, and empirical accuracy.",
+      "This paper investigates the effects of highway on-ramps and off-ramps using cellular automaton traffic models. The authors simulate vehicles entering and leaving a highway to understand how merging and exiting movements affect traffic density and congestion.",
+    results: [
+      "Shows that on-ramps can disturb highway traffic and contribute to congestion near merging areas.",
+      "Demonstrates that vehicle entry and exit influence the distribution of traffic density along a highway.",
+      "Extends basic cellular automaton traffic models to include more realistic highway infrastructure.",
+    ],
   },
   {
     id: 10,
-    citation: "Knospe et al. (2002) - A realistic two-lane traffic model for highway traffic",
-    link: "https://arxiv.org/abs/cond-mat/0203346",
+    citation: "Eisenblätter, B., Santen, L., Schadschneider, A., & Schreckenberg, M. (1997). Jamming transition in a cellular automaton model for traffic flow. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/9706041",
     summary:
-      "This study extends a realistic microscopic cellular automaton framework to two-lane highway traffic. It investigates lane usage, lane-changing behavior, and synchronization between lanes, demonstrating how cellular automata can represent interactions beyond a single lane. Its scope remains narrower than a complete multi-lane road-network model with diverse road users and infrastructure.",
+      "This paper examines the transition from freely moving traffic to congested traffic in a cellular automaton model. The authors study how changes in vehicle density and interactions between cars affect the formation of traffic jams.",
+    results: [
+      "Investigates the conditions under which traffic changes from free flow to congestion.",
+      "Shows how vehicle density and local movement rules influence the development of jams.",
+      "Contributes to the theoretical understanding of traffic phase transitions in cellular automaton models.",
+    ],
   },
   {
     id: 11,
-    citation: "Knospe et al. (2004) - An empirical test for cellular automaton models of traffic flow",
-    link: "https://arxiv.org/abs/cond-mat/0404710",
+    citation: "Esser, J., & Schreckenberg, M. (1997). Microscopic simulation of urban traffic based on cellular automata.",
+    link: "https://www.researchgate.net/publication/2584087_Microscopic_Simulation_Of_Urban_Traffic_Based_On_Cellular_Automata",
     summary:
-      "This paper evaluates several cellular automaton traffic models using a microscopic test scenario motivated by empirical single-vehicle data. It distinguishes models that reproduce traffic patterns qualitatively from those that match macroscopic observations and microscopic measurements. The study emphasizes the importance of empirical validation, although its conclusions depend on the selected test scenario and evaluation measures.",
+      "This paper applies cellular automata to microscopic urban traffic simulation. It models the movement of individual vehicles through a city road network using simple local rules and considers how roads and intersections influence traffic movement.",
+    results: [
+      "Demonstrates that cellular automata can be used to simulate traffic in urban road networks.",
+      "Shows how individual vehicle movements can produce larger traffic patterns across a city.",
+      "Provides a foundation for using cellular automata in practical urban traffic simulation.",
+    ],
   },
   {
     id: 12,
-    citation: "Gershenson and Rosenblueth (2009) - Modeling self-organizing traffic lights with elementary cellular automata",
+    citation: "Foulaadvand, M. E., & Belbaasi, S. (2007). Vehicular traffic flow at a non-signalised intersection. arXiv.",
+    link: "https://arxiv.org/abs/0712.2157",
+    summary:
+      "This paper studies vehicle movement through an intersection without traffic lights using a traffic simulation model. It investigates how vehicles from different directions interact when crossing the intersection and how traffic conditions affect waiting and movement.",
+    results: [
+      "Shows how traffic flow at an unsignalized intersection depends on interactions between crossing vehicles.",
+      "Investigates how increasing traffic demand affects queues and delays.",
+      "Provides insight into intersection behavior without fixed traffic-signal control.",
+    ],
+  },
+  {
+    id: 13,
+    citation: "Foulaadvand, M. E., & Belbaasi, S. (2008). Simulation of traffic flow at a signalised intersection. arXiv.",
+    link: "https://arxiv.org/abs/0809.3591",
+    summary:
+      "This paper simulates vehicle movement through an intersection controlled by traffic lights. The authors examine how traffic signals regulate vehicles arriving from different directions and how signal settings affect traffic flow and waiting times.",
+    results: [
+      "Shows that traffic-signal settings influence vehicle queues and delays at an intersection.",
+      "Demonstrates how simulation can be used to study traffic movement under different signal conditions.",
+      "Provides a way to evaluate intersection performance using microscopic traffic rules.",
+    ],
+  },
+  {
+    id: 14,
+    citation: "Fouladvand, M. E., Sadjadi, Z., & Shaebani, M. R. (2003). Characteristics of vehicular traffic flow at a roundabout (Version 1). arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0309560v1",
+    summary:
+      "This paper studies vehicle movement through a roundabout using a traffic simulation model. It examines how cars enter, circulate, and leave the roundabout and how interactions between entering vehicles and circulating traffic influence overall traffic performance.",
+    results: [
+      "Investigates how traffic density affects vehicle movement through a roundabout.",
+      "Shows that interactions between entering and circulating vehicles can create delays and queues.",
+      "Demonstrates how microscopic traffic simulation can represent the behavior of roundabout intersections.",
+    ],
+  },
+  {
+    id: 15,
+    citation: "Fouladvand, M. E., Sadjadi, Z., & Shaebani, M. R. (2004). Optimised traffic flow at a single intersection: Traffic responsive signalisation. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0401078",
+    summary:
+      "This paper investigates traffic-responsive signal control at a single intersection. Instead of using only fixed signal timings, the study considers how traffic lights can respond to changing vehicle conditions to improve movement through the intersection.",
+    results: [
+      "Explores how traffic-responsive signal timing can improve intersection performance.",
+      "Shows the importance of adapting signal control to changing traffic demand.",
+      "Demonstrates how microscopic traffic simulation can support the evaluation of adaptive traffic-light strategies.",
+    ],
+  },
+  {
+    id: 16,
+    citation: "Fukś, H. (1999). Exact results for deterministic cellular automata traffic models. arXiv.",
+    link: "https://arxiv.org/abs/comp-gas/9902001",
+    summary:
+      "This paper develops mathematical results for deterministic cellular automaton traffic models. Unlike stochastic models that include random braking, deterministic models follow fixed movement rules. The author analyzes traffic behavior using exact mathematical methods.",
+    results: [
+      "Provides analytical results for traffic models governed by deterministic cellular automaton rules.",
+      "Helps explain the relationship between vehicle density and traffic flow without relying entirely on simulations.",
+      "Establishes mathematical tools for understanding the behavior of simple traffic cellular automata.",
+    ],
+  },
+  {
+    id: 17,
+    citation: "Gershenson, C., & Rosenblueth, D. A. (2009). Modeling self-organizing traffic lights with elementary cellular automata. arXiv.",
     link: "https://arxiv.org/abs/0907.1925",
     summary:
-      "This paper investigates self-organizing traffic-light control using elementary cellular automata. It presents an alternative to centrally optimized signal timing by emphasizing coordination through simple local rules. The approach is relevant to adaptive traffic management, although its practical effectiveness depends on the traffic scenarios and performance criteria used for evaluation.",
+      "This paper investigates how elementary cellular automata can model self-organizing traffic lights. It examines traffic-signal behavior based on local conditions rather than relying entirely on centrally planned signal timings.",
+    results: [
+      "Shows how simple local rules can be used to represent adaptive traffic-light behavior.",
+      "Explores self-organization as an alternative to fixed or centrally optimized signal control.",
+      "Demonstrates the potential of elementary cellular automata for studying traffic-light coordination.",
+    ],
+  },
+  {
+    id: 18,
+    citation: "Hauck, C., Sun, Y., & Timofeyev, I. (2012). On cellular automata models of traffic flow with look-ahead potential. arXiv.",
+    link: "https://arxiv.org/abs/1209.5802",
+    summary:
+      "This paper studies cellular automaton traffic models that incorporate a look-ahead potential, allowing vehicle movement decisions to account for traffic conditions farther ahead. The authors investigate how this additional information changes vehicle behavior and the overall traffic flow.",
+    results: [
+      "Examines how look-ahead information affects vehicle movement in cellular automaton models.",
+      "Investigates the influence of anticipatory driving behavior on traffic organization and congestion.",
+      "Extends basic traffic models by considering more information than the immediate position of the vehicle ahead.",
+    ],
+  },
+  {
+    id: 19,
+    citation: "Knospe, W., Santen, L., Schadschneider, A., & Schreckenberg, M. (1998). Disorder effects in cellular automata for two-lane traffic. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/9810184",
+    summary:
+      "This paper investigates disorder effects in a two-lane cellular automaton model of highway traffic. It studies how differences in vehicle behavior and lane interactions influence traffic movement, congestion, and the performance of a two-lane road.",
+    results: [
+      "Shows that lane interactions can influence traffic flow differently from single-lane models.",
+      "Investigates how disorder or variation in traffic conditions affects congestion.",
+      "Contributes to understanding how cellular automata can represent more complex multi-lane traffic behavior.",
+    ],
+  },
+  {
+    id: 20,
+    citation: "Knospe, W., Santen, L., Schadschneider, A., & Schreckenberg, M. (2000). Towards a realistic microscopic description of highway traffic. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0012204",
+    summary:
+      "This paper develops a more realistic microscopic cellular automaton model for highway traffic. The authors introduce more detailed representations of vehicle behavior to reproduce traffic phenomena that simpler models may not capture.",
+    results: [
+      "Shows how additional driving rules can improve the representation of realistic highway traffic.",
+      "Investigates traffic patterns that arise from interactions between individual vehicles.",
+      "Provides a foundation for later cellular automaton models that aim to reproduce observed traffic behavior.",
+    ],
+  },
+  {
+    id: 21,
+    citation: "Knospe, W., Santen, L., Schadschneider, A., & Schreckenberg, M. (2001). Human behavior as origin of traffic phases. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0107051",
+    summary:
+      "This paper examines how human driving behavior contributes to the different phases of highway traffic. Using a microscopic traffic model, the authors investigate how drivers' responses to surrounding vehicles can produce free-flowing, synchronized, and congested traffic conditions.",
+    results: [
+      "Connects the appearance of different traffic phases to individual driving behavior.",
+      "Shows that local interactions between drivers can produce large-scale changes in traffic conditions.",
+      "Highlights the importance of representing human behavior in realistic microscopic traffic models.",
+    ],
+  },
+  {
+    id: 22,
+    citation: "Knospe, W., Santen, L., Schadschneider, A., & Schreckenberg, M. (2002). A realistic two-lane traffic model for highway traffic. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0203346",
+    summary:
+      "This paper extends a realistic microscopic cellular automaton model to two-lane highway traffic. The authors study how vehicles change lanes, interact with traffic in neighboring lanes, and respond to different traffic conditions.",
+    results: [
+      "Demonstrates how realistic lane-changing rules can be incorporated into cellular automaton traffic models.",
+      "Investigates interactions and synchronization between two highway lanes.",
+      "Extends microscopic traffic modeling beyond the limitations of single-lane road simulations.",
+    ],
+  },
+  {
+    id: 23,
+    citation: "Knospe, W., Santen, L., Schadschneider, A., & Schreckenberg, M. (2004). An empirical test for cellular automaton models of traffic flow. Physical Review E, 70(1), Article 016115.",
+    link: "https://arxiv.org/abs/cond-mat/0404710",
+    summary:
+      "This paper evaluates several cellular automaton traffic models using a microscopic test scenario based on empirical single-vehicle data. The authors compare the ability of different models to reproduce observed traffic behavior at both macroscopic and microscopic levels.",
+    results: [
+      "Shows that reproducing realistic-looking traffic patterns does not necessarily mean a model matches empirical measurements.",
+      "Distinguishes models with qualitative agreement from those that reproduce macroscopic and microscopic traffic characteristics.",
+      "Demonstrates the importance of empirical testing when evaluating the accuracy of traffic cellular automata.",
+    ],
+  },
+  {
+    id: 24,
+    citation: "Larraga, M. E., & del Rio, J. A. (2001). Cellular automata for one-lane traffic flow modelling: Safety and automation. arXiv.",
+    link: "https://arxiv.org/abs/cond-mat/0112082",
+    summary:
+      "This paper investigates one-lane traffic flow using cellular automaton models with an emphasis on vehicle safety and automation. It examines how movement rules can represent safer driving behavior and how automated vehicle control may influence traffic conditions.",
+    results: [
+      "Explores how safety-related driving rules can be incorporated into cellular automaton traffic models.",
+      "Investigates the effects of automated vehicle behavior on one-lane traffic flow.",
+      "Connects microscopic traffic modeling with questions of vehicle control and road safety.",
+    ],
+  },
+  {
+    id: 25,
+    citation: "Li, J., & Yan, C. (2023). Traffic flow simulation for autonomous driving. arXiv.",
+    link: "https://arxiv.org/abs/2307.16762",
+    summary:
+      "This paper examines traffic flow simulation in the context of autonomous driving. It considers how simulated traffic environments can be used to study vehicle interactions and traffic behavior relevant to autonomous vehicle systems.",
+    results: [
+      "Highlights the role of traffic simulation in studying autonomous driving scenarios.",
+      "Connects vehicle-level interactions with broader traffic-flow behavior.",
+      "Provides context for applying traffic simulation techniques to autonomous vehicle research.",
+    ],
   },
   {
     id: 26,
