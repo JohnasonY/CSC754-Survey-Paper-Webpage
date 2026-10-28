@@ -615,16 +615,85 @@ const annotatedPapers = [
       "Introduces a model whose car interactions stay the same when the same speed is added to all cars.",
     ],
   },
+  {
+    id: 51,
+    citation: "Kerner, B. S., Klenov, S. L., & Wolf, D. E. (2002). Cellular automata approach to three-phase traffic theory. arXiv.",
+    link: "https://arxiv.org/pdf/cond-mat/0206370",
+    summary:
+      "This paper develops cellular automaton models for free flow, synchronized flow, and wide moving jams. Its central approach introduces a synchronization distance: drivers adapt to the leading vehicle's speed without selecting a unique following gap. With stochastic acceleration and slow-to-start rules, steady states occupy a two-dimensional flow-density region. On-ramp simulations vary main-road and ramp inflows to examine congestion patterns, breakdown probability, and capacity drops.",
+    results: [
+      "Reproduces synchronized-flow patterns and general patterns containing moving jams, in qualitative agreement with three-phase traffic theory.",
+      "Shows that changing ramp and upstream demand changes the congested pattern and the probability of breakdown from free to synchronized flow.",
+      "Calculates capacity reductions after breakdown and distinguishes the resulting patterns from those of fundamental-diagram CA models.",
+    ],
+  },
+  {
+    id: 52,
+    citation: "Li, X., Yan, X., Li, X., & Wang, J. (2012). Using cellular automata to investigate pedestrian conflicts with vehicles in crosswalk at signalized intersection. Discrete Dynamics in Nature and Society, 2012, Article 287502.",
+    link: "https://onlinelibrary.wiley.com/doi/epdf/10.1155/2012/287502",
+    summary:
+      "This paper combines pedestrian and vehicle movement in a signalized-crosswalk CA model with four conflict areas and explicit yielding rules. It uses 0.5 m cells, observed pedestrian speed proportions, and random priority when both users target the same cell. MATLAB experiments average thirty one-hour runs per scenario, varying traffic demand, pedestrian green time, and crosswalk width to study capacity, conflicts, and delay.",
+    results: [
+      "Finds that conflicts increase with vehicle flow but peak and then decline as pedestrian flow rises; right-turn conflict areas are most affected.",
+      "Finds that longer pedestrian green time increases conflict opportunities while reducing conflict delay; crosswalk width has little influence on conflict counts or conflict delay in these simulations.",
+      "Reports that conflict delay can account for up to 41% of total pedestrian crossing delay.",
+    ],
+  },
+  {
+    id: 53,
+    citation: "Wang, J., Lv, W., Jiang, Y., & Huang, G. (2024). A cellular automata approach for modelling pedestrian-vehicle mixed traffic flow in urban city. arXiv.",
+    link: "https://arxiv.org/pdf/2405.06282",
+    summary:
+      "This preprint unifies vehicles and pedestrians in a multi-grid CA framework, combining an improved Kerner-Klenov-Wolf vehicle model with a time-to-collision-based pedestrian model. Two-lane simulations with periodic boundaries vary vehicle and pedestrian densities to study sidewalk intrusion, lane changes, and congestion. Additional experiments compare speed limits and sidewalk widths, measuring conflicts through vehicle deceleration exceeding 3.6 m/s².",
+    results: [
+      "Identifies six mixed-traffic phase regions; pedestrian intrusion can redistribute vehicles between lanes and generate stop-and-go waves and moving jams.",
+      "Reports peak conflict counts of about 140 at 60.48 km/h versus about 40 at 30.24 km/h in the simulated speed-limit comparison.",
+      "Finds wider sidewalks reduce conflicts in some pedestrian-density ranges, while peak counts remain around 130–140; the benefit is not uniform across all densities.",
+    ],
+  },
+  {
+    id: 54,
+    citation: "Hou, J., List, G. F., & Guo, X. (2014). New algorithms for computing the time-to-collision in freeway traffic simulation models. Computational Intelligence and Neuroscience, 2014, Article 761047.",
+    link: "https://onlinelibrary.wiley.com/doi/epdf/10.1155/2014/761047",
+    summary:
+      "This paper develops continuous two-dimensional time-to-collision (TTC) calculations for freeway microsimulation, including lateral motion and vehicle safety buffers. It compares circles, rectangles, and ellipse-rectangle geometry, then combines large- and small-circle screening with detailed ellipse-rectangle calculations. MATLAB tests use smoothed NGSIM US-101 trajectories, evaluating 327,616 vehicle pairs with a five-second TTC horizon.",
+    results: [
+      "The combined algorithm takes 17 seconds versus 45 seconds for the ellipse-rectangle method alone on the reported test computer, with the same TTC results.",
+      "Inverse TTC correlates with braking and steering reaction intensity at r = 0.732 for ellipse-based methods, compared with 0.381 for circles and 0.522 for rectangles.",
+      "Provides a computational safety-analysis method rather than a CA movement model; validation within a complete traffic simulation remains future work.",
+    ],
+  },
 ];
 
 const placeholder = {
   summary: "Summary to be added.",
 };
 
-// Keep the shared bibliography order by matching annotations by paper link.
+// Match equivalent arXiv abstract/PDF and Wiley/DOI links without changing
+// stored URLs. Other links retain their existing exact-match behavior.
+function paperLinkKey(link) {
+  const arxiv = link.match(/^https?:\/\/(?:www\.)?arxiv\.org\/(?:abs|pdf|html)\/([^?#]+)/i);
+  if (arxiv) {
+    return `arxiv:${arxiv[1].replace(/\.pdf$/i, "").replace(/v\d+$/, "")}`;
+  }
+  const doi = link.match(/^https?:\/\/(?:doi\.org\/|dx\.doi\.org\/|onlinelibrary\.wiley\.com\/doi\/(?:abs\/|full\/|pdf\/|epdf\/)?)(10\.[^?#]+)/i);
+  return doi ? `doi:${doi[1].replace(/\/$/, "").toLowerCase()}` : link;
+}
+
 const annotationsByLink = new Map(
-  annotatedPapers.map((paper) => [paper.link, paper]),
+  annotatedPapers.map((paper) => [paperLinkKey(paper.link), paper]),
 );
+
+// Preserve shared bibliography order and index-based display numbers. Append
+// only the four additions missing from that list; never mutate the import.
+// Annotation IDs are data identifiers, not the rendered bibliography numbers.
+const bibliographyLinks = new Set(bibliography.map((paper) => paperLinkKey(paper.link)));
+const displayedPapers = [
+  ...bibliography,
+  ...annotatedPapers
+    .filter((paper) => paper.id >= 51 && paper.id <= 54 && !bibliographyLinks.has(paperLinkKey(paper.link)))
+    .map((paper) => ({ APA: paper.citation, link: paper.link })),
+];
 
 export default function AnnotatedBibliography() {
   return (
@@ -634,7 +703,7 @@ export default function AnnotatedBibliography() {
           <p className="section-label">Literature</p>
           <h2>Annotated Bibliography</h2>
         </div>
-        <p className="paper-count">{bibliography.length} papers</p>
+        <p className="paper-count">{displayedPapers.length} papers</p>
       </header>
 
       <p className="annotated-description">
@@ -642,11 +711,11 @@ export default function AnnotatedBibliography() {
       </p>
 
       <section className="annotation-list" aria-label="Annotated papers">
-        {bibliography.map((paper, index) => {
+        {displayedPapers.map((paper, index) => {
           const id = index + 1;
           const notes = {
             ...placeholder,
-            ...annotationsByLink.get(paper.link),
+            ...annotationsByLink.get(paperLinkKey(paper.link)),
           };
 
           return (

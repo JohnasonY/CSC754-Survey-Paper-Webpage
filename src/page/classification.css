@@ -121,6 +121,142 @@
   color: #176b5b;
 }
 
+.paper-notes {
+  margin-top: 80px;
+}
+
+.paper-notes .classification-header {
+  margin-bottom: 32px;
+}
+
+.paper-note {
+  border-top: 1px solid #d9dedb;
+}
+
+.paper-note:last-child {
+  border-bottom: 1px solid #d9dedb;
+}
+
+.paper-note summary {
+  padding: 24px 0;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.paper-note summary::marker,
+.paper-note-number {
+  color: #176b5b;
+}
+
+.paper-note-number {
+  margin-right: 16px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.paper-note summary:focus-visible,
+.paper-note-body a:focus-visible {
+  outline: 2px solid #176b5b;
+  outline-offset: 4px;
+}
+
+.paper-note-body {
+  padding: 8px 0 32px;
+  color: #45504c;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.paper-note-body h2,
+.paper-note-body h3,
+.paper-note-body h4 {
+  color: #17201e;
+  line-height: 1.4;
+}
+
+.paper-note-body h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.paper-note-body a {
+  color: #176b5b;
+  text-underline-offset: 3px;
+}
+
+.paper-note-source {
+  font-size: 0.85rem;
+}
+
+.paper-note-body li {
+  margin: 8px 0;
+}
+
+.paper-note-body ol,
+.paper-note-body ul {
+  padding-left: 24px;
+}
+
+.paper-note-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.paper-note-table,
+.paper-note-body pre,
+.paper-note-body .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.paper-note-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.paper-note-body th,
+.paper-note-body td {
+  padding: 12px 16px;
+  border: 1px solid #d9dedb;
+  text-align: left;
+  min-width: 140px;
+  width: auto;
+  white-space: normal;
+  color: inherit;
+}
+
+.paper-note-body td:first-child {
+  font-weight: 400;
+}
+
+.paper-note-body th {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.paper-note-body th,
+.paper-note-body pre {
+  background: #f0f5f2;
+}
+
+.paper-note-body pre {
+  padding: 16px;
+}
+
+.paper-note-body blockquote {
+  margin-left: 0;
+  padding-left: 20px;
+  border-left: 3px solid #176b5b;
+}
+
 /* MOBILE */
 
 @media (max-width: 700px) {
