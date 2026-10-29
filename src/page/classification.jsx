@@ -1,90 +1,206 @@
 import "./classification.css";
+import { useEffect, useState } from "react";
+
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
-const noteFiles = import.meta.glob("/public/Notes/*.md", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-});
+import { papers } from "../data/papers";
 
-const paperNotes = Object.entries(noteFiles)
-  .map(([path, markdown]) => {
-    const filename = path.split("/").pop();
-    return {
-      filename,
-      number: parseInt(filename, 10),
-      title: markdown.match(/^#\s+(.+)$/m)?.[1] ?? filename.replace(/\.md$/, ""),
-      // The source notes use both dollar and LaTeX-style math delimiters.
-      markdown: markdown
-        .replace(/\\\(([\s\S]*?)\\\)/g, (_, math) => `$${math}$`)
-        // Keep the list indentation: unindented math fences end the list
-        // and cause the following figures to be parsed as code blocks.
-        .replace(/^( *)\\\[([^\n]*?)\\\][ \t]*$/gm,
-          (_, indent, math) => `${indent}$$\n${indent}${math.trim()}\n${indent}$$`)
-        .replace(/\\\[([^\n]*?)\\\]/g, (_, math) => `$${math.trim()}$`),
-    };
-  })
-  .sort((a, b) => a.filename.localeCompare(b.filename, undefined, { numeric: true }));
+// Centralized paper lookup
+const papersById = new Map(
+  papers.map((paper) => [paper.id, paper])
+);
 
+const notesBase = `${import.meta.env.BASE_URL}Notes/`;
+
+// Resolve image and hyperlink paths in Markdown
 function noteUrl(url) {
-  if (/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url)) return url;
-  return `${import.meta.env.BASE_URL}Notes/${url.replace(/^\.\//, "")}`;
+  if (!url) return "";
+
+  if (/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url)) {
+    return url;
+  }
+
+  return `${notesBase}${url.replace(/^\.\//, "")}`;
 }
 
+// Normalize mathematical delimiters
+function normalizeMath(markdown) {
+  return markdown
+    .replace(
+      /\\\(([\s\S]*?)\\\)/g,
+      (_, math) => `$${math}$`
+    )
+    .replace(
+      /^( *)\\\[([^\n]*?)\\\][ \t]*$/gm,
+      (_, indent, math) =>
+        `${indent}$$\n${indent}${math.trim()}\n${indent}$$`
+    )
+    .replace(
+      /\\\[([^\n]*?)\\\]/g,
+      (_, math) => `$${math.trim()}$`
+    );
+}
+
+// Markdown renderer
 const markdownComponents = {
   h1: ({ children }) => <h3>{children}</h3>,
+
   img: ({ src, alt, title }) => (
-    <img src={noteUrl(src ?? "")} alt={alt} title={title} loading="lazy" />
+    <img
+      src={noteUrl(src ?? "")}
+      alt={alt}
+      title={title}
+      loading="lazy"
+    />
   ),
-  a: ({ href, children }) => <a href={noteUrl(href ?? "")}>{children}</a>,
+
+  a: ({ href, children }) => (
+    <a href={noteUrl(href ?? "")}>{children}</a>
+  ),
+
   table: ({ children }) => (
-    <div className="paper-note-table"><table>{children}</table></div>
+    <div className="paper-note-table">
+      <table>{children}</table>
+    </div>
   ),
 };
 
-const demoCategories = [
+// Classification categories
+// These assignments are examples, not final classifications.
+const categories = [
   {
     number: "01",
     title: "Example Category A",
     description:
       "Temporary description showing how a classification and its explanation will appear on the page.",
-    papers: [],
+    paperIds: [1, 2, 3],
   },
   {
     number: "02",
     title: "Example Category B",
     description:
       "Temporary description showing how papers belonging to another classification will be displayed.",
-    papers: [],
+    paperIds: [4, 5],
   },
   {
     number: "03",
     title: "Example Category C",
     description:
       "Placeholder content for demonstrating the classification page layout.",
-    papers: [],
+    paperIds: [],
   },
   {
     number: "04",
     title: "Example Category D",
     description:
       "Placeholder category to be replaced once the literature has been reviewed and classified.",
-    papers: [],
+    paperIds: [],
   },
   {
     number: "05",
     title: "Example Category E",
     description:
       "Temporary demonstration content. This does not represent a final literature classification.",
-    papers: [],
+    paperIds: [],
   },
 ];
 
+const classifiedCategories = categories.map((category) => ({
+  ...category,
+  papers: category.paperIds
+    .map((id) => papersById.get(id))
+    .filter(Boolean),
+}));
+
 export default function Classification() {
+  const [paperNotes, setPaperNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadNotes() {
+      try {
+        const manifestResponse = await fetch(
+          `${notesBase}index.json`
+        );
+
+        if (!manifestResponse.ok) {
+          throw new Error("Could not load notes index.");
+        }
+
+        const filenames = await manifestResponse.json();
+
+        if (
+          !Array.isArray(filenames) ||
+          !filenames.every((name) => typeof name === "string")
+        ) {
+          throw new Error("Invalid notes index.");
+        }
+
+        const notes = await Promise.all(
+          filenames
+            .filter((filename) => filename.endsWith(".md"))
+            .map(async (filename) => {
+              const response = await fetch(
+                `${notesBase}${encodeURIComponent(filename)}`
+              );
+
+              if (!response.ok) {
+                throw new Error(
+                  `Could not load ${filename}`
+                );
+              }
+
+              const markdown = await response.text();
+              const number = parseInt(filename, 10);
+
+              return {
+                filename,
+                number,
+                paper: papersById.get(number),
+                title:
+                  markdown.match(/^#\s+(.+)$/m)?.[1] ??
+                  filename.replace(/\.md$/, ""),
+                markdown: normalizeMath(markdown),
+              };
+            })
+        );
+
+        notes.sort((a, b) =>
+          a.filename.localeCompare(
+            b.filename,
+            undefined,
+            { numeric: true }
+          )
+        );
+
+        if (!cancelled) {
+          setPaperNotes(notes);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err.message);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadNotes();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <main className="classification-page">
       <header className="classification-header">
@@ -99,8 +215,11 @@ export default function Classification() {
       </header>
 
       <section className="classification-list">
-        {demoCategories.map((category) => (
-          <article className="classification-item" key={category.number}>
+        {classifiedCategories.map((category) => (
+          <article
+            className="classification-item"
+            key={category.number}
+          >
             <span className="classification-number">
               {category.number}
             </span>
@@ -112,8 +231,13 @@ export default function Classification() {
               {category.papers.length > 0 && (
                 <div className="category-papers">
                   {category.papers.map((paper) => (
-                    <a href={paper.href} key={paper.title}>
-                      {paper.title}
+                    <a
+                      href={paper.link}
+                      key={paper.id}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {paper.citation}
                     </a>
                   ))}
                 </div>
@@ -122,30 +246,76 @@ export default function Classification() {
 
             <span className="classification-count">
               {category.papers.length}{" "}
-              {category.papers.length === 1 ? "paper" : "papers"}
+              {category.papers.length === 1
+                ? "paper"
+                : "papers"}
             </span>
           </article>
         ))}
       </section>
 
-      <section className="paper-notes" aria-labelledby="paper-notes-heading">
+      <section
+        className="paper-notes"
+        aria-labelledby="paper-notes-heading"
+      >
         <header className="classification-header">
           <p className="section-label">Paper notes</p>
-          <h2 id="paper-notes-heading">Detailed Comment/Note</h2>
+          <h2 id="paper-notes-heading">
+            Detailed Comment/Note
+          </h2>
           <p className="classification-intro">
-            Detailed reading notes, figures, and comments for each paper.
+            Detailed reading notes, figures, and comments
+            for each paper.
           </p>
         </header>
+
+        {loading && <p>Loading paper notes...</p>}
+
+        {error && (
+          <p role="alert">
+            Unable to load notes: {error}
+          </p>
+        )}
+
         {paperNotes.map((note) => (
-          <details className="paper-note" key={note.filename}>
+          <details
+            className="paper-note"
+            key={note.filename}
+            id={`note-${note.number}`}
+          >
             <summary>
-              <span className="paper-note-number">Paper {note.number}</span>
-              <span>{note.title}</span>
+              <span className="paper-note-number">
+                Paper {note.number}
+              </span>
+
+              <span>
+                {note.paper?.citation ?? note.title}
+              </span>
             </summary>
+
             <div className="paper-note-body">
-              <a className="paper-note-source" href={`${import.meta.env.BASE_URL}Notes/${encodeURIComponent(note.filename)}`}>
+              <a
+                className="paper-note-source"
+                href={`${notesBase}${encodeURIComponent(
+                  note.filename
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Markdown file
               </a>
+
+              {note.paper && (
+                <a
+                  className="paper-note-source"
+                  href={note.paper.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Research Paper
+                </a>
+              )}
+
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, remarkMath]}
                 rehypePlugins={[rehypeKatex]}
