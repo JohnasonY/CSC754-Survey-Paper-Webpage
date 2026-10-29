@@ -650,192 +650,192 @@ export const papers = [
   {
     "id": 55,
     "citation": "Feng, T., Liu, K., & Liang, C. (2023). An improved cellular automata traffic flow model considering driving styles. Sustainability, 15(2), 952.",
-    "link": "https://scholar.google.com/scholar?q=An%20improved%20cellular%20automata%20traffic%20flow%20model%20considering%20driving%20styles",
-    "summary": "Examines how distinct driving styles can be represented in a modified cellular automaton traffic model.",
+    "link": "https://doi.org/10.3390/su15020952",
+    "summary": "This study develops an improved cellular automaton traffic model incorporating different driving styles identified from NGSIM vehicle trajectory data. Principal component analysis and k-means clustering are used to classify driving behavior. The model extends traditional traffic rules by introducing over-acceleration and speed adaptation mechanisms to reproduce free flow, synchronized traffic, and wide moving jams. The authors compare the model with the NaSch model and investigate how aggressive and calm driving styles influence road capacity, traffic stability, and congestion dissipation.",
     "results": [
-      "Incorporates driving-style differences into traffic simulation rules.",
-      "Studies how heterogeneous driver behavior influences simulated traffic flow.",
-      "Provides a basis for comparing traffic outcomes under different driver profiles."
+      "The improved model produces approximately 15% higher maximum traffic flow than the NaSch model under the reported simulation conditions.",
+      "Aggressive driving increases simulated traffic capacity by approximately 181% compared with calm driving, although aggressive behavior makes free-flow conditions less stable.",
+      "The improved model reproduces free-flow, synchronized-flow, and wide-moving-jam phases while producing fewer congested regions and faster congestion dissipation than the NaSch model."
     ],
     "important": true
   },
   {
     "id": 56,
     "citation": "Jiang, Y., Wang, S., Yao, Z., Zhao, B., & Wang, Y. (2021). A cellular automata model for mixed traffic flow considering the driving behavior of connected automated vehicle platoons. Physica A: Statistical Mechanics and its Applications, 582, 126262.",
-    "link": "https://scholar.google.com/scholar?q=A%20cellular%20automata%20model%20for%20mixed%20traffic%20flow%20considering%20the%20driving%20behavior%20of%20connected%20automated%20vehicle%20platoons",
-    "summary": "Develops a cellular automaton approach to traffic shared by human-driven vehicles and connected automated vehicle platoons.",
+    "link": "https://doi.org/10.1016/j.physa.2021.126262",
+    "summary": "This paper proposes a cellular automaton model for mixed traffic containing human-driven vehicles and connected automated vehicles operating in platoons. Three car-following modes are considered: human driving, adaptive cruise control, and cooperative adaptive cruise control. The model incorporates safety distance, vehicle reaction time, random braking behavior, and synchronized movements within CAV platoons. Numerical simulations investigate how CAV penetration rates and maximum platoon sizes influence traffic capacity, congestion, and speed fluctuations.",
     "results": [
-      "Represents platoon driving behavior in mixed traffic.",
-      "Examines interactions between automated platoons and conventional vehicles.",
-      "Supports simulation of how platooning changes overall traffic behavior."
+      "The simulations report road capacity improvements reaching 3.24 times the human-driven traffic baseline under the studied CAV conditions.",
+      "The maximum reported reduction in traffic congestion reaches 63.36%, demonstrating the potential of CAV platoons to alleviate congestion.",
+      "Vehicle speed fluctuations decrease significantly when CAV penetration reaches 80%. Increasing maximum platoon size can also improve capacity under full CAV penetration, with an optimal size depending on traffic density."
     ],
     "important": true
   },
   {
     "id": 57,
     "citation": "Jiang, Y., Yi, Z., Xiao, G., Li, H., & Yao, Z. (2023). Modeling the effect of the platoon size of CAVs on mixed traffic flow: a cellular automaton method. Journal of Advanced Transportation, 2023(1), 2761858.",
-    "link": "https://scholar.google.com/scholar?q=Modeling%20the%20effect%20of%20the%20platoon%20size%20of%20CAVs%20on%20mixed%20traffic%20flow%3A%20a%20cellular%20automaton%20method",
-    "summary": "Uses a cellular automaton method to investigate the role of connected automated vehicle platoon size in mixed traffic.",
+    "link": "https://doi.org/10.1155/2023/2761858",
+    "summary": "This paper develops a cellular automaton model to examine how connected automated vehicle platoon size affects mixed traffic flow. Vehicles are divided into four car-following modes: human-driven vehicles, adaptive cruise control vehicles, and CAVs operating in interplatoon and intraplatoon cooperative adaptive cruise control modes. Numerical simulations evaluate traffic capacity, average speed, congestion, and reaction-time effects across different CAV penetration rates and platoon sizes. The study also compares simulation results with theoretical calculations.",
     "results": [
-      "Treats platoon size as a variable in mixed-traffic simulations.",
-      "Investigates how CAV grouping affects surrounding traffic.",
-      "Provides a modeling framework for comparing platoon configurations."
+      "Compared with fully human-driven traffic, an 80% CAV penetration rate increases simulated road capacity by approximately 2.2 times, while 100% penetration increases it by approximately 4.3 times.",
+      "Higher CAV penetration increases average speeds and reduces congestion at the same vehicle density, with particularly noticeable congestion improvements above 60% penetration.",
+      "At full CAV penetration, larger platoons can improve road capacity; under moderate traffic density, the study identifies seven CAVs as the optimal platoon size. Simulated and theoretical results differ by only 0.46% in the full-CAV comparison."
     ],
     "important": true
   },
   {
     "id": 58,
     "citation": "Chen, T., Wang, Z., Xiang, J., & Li, H. (2024). Analysis of mixed traffic flow characteristics based on cellular automata model under lane management measures. Physica A: Statistical Mechanics and its Applications, 654, 130177.",
-    "link": "https://scholar.google.com/scholar?q=Analysis%20of%20mixed%20traffic%20flow%20characteristics%20based%20on%20cellular%20automata%20model%20under%20lane%20management%20measures",
-    "summary": "Investigates mixed traffic flow using a cellular automaton model under different lane management measures.",
+    "link": "https://doi.org/10.1016/j.physa.2024.130177",
+    "summary": "This study develops a multilane cellular automaton model for mixed traffic consisting of human-driven vehicles, connected automated vehicles, and CAV platoons. The model incorporates lane-changing behavior, variation in human drivers' desired speeds, and the formation, splitting, and merging of CAV platoons. Simulations on a three-lane highway compare mixed lanes, CAV-dedicated lanes, and CAV-priority lanes. Traffic capacity, congestion characteristics, CACC degradation, and vehicle speeds are used to evaluate the effectiveness of these lane management strategies.",
     "results": [
-      "Models mixed traffic under lane management policies.",
-      "Examines the relationship between lane organization and traffic characteristics.",
-      "Provides a simulation basis for evaluating lane management strategies."
+      "Increasing the CAV penetration rate increases traffic capacity, optimal density, and jam density. The flow-density relationship changes from a triangular to a trapezoidal pattern when CAV penetration exceeds 60%.",
+      "CAV-dedicated lanes reduce CACC degradation but improve total traffic capacity only after the CAV proportion reaches a sufficient threshold.",
+      "At CAV penetration rates of 30% or less and normalized densities of 0.3 or less, CAV-priority lanes can meet traffic demand while reducing CACC degradation. Vehicles in priority lanes also achieve higher speeds than those in human-driven lanes."
     ],
     "important": true
   },
   {
     "id": 59,
     "citation": "Rigler, A., & Turk, G. (2025). The Influence of Different Driving Parameters on Traffic with a Cellular Automata Model. Applied Sciences, 15(23), 12404.",
-    "link": "https://scholar.google.com/scholar?q=The%20Influence%20of%20Different%20Driving%20Parameters%20on%20Traffic%20with%20a%20Cellular%20Automata%20Model",
-    "summary": "Studies how changes in driving parameters affect traffic behavior in a cellular automaton model.",
+    "link": "https://doi.org/10.3390/app152312404",
+    "summary": "This study introduces a modified cellular automaton model with adaptive acceleration and heterogeneous driver reaction times. The model calculates vehicle movements using safety distances, acceleration and deceleration capabilities, maximum speeds, and reaction times. Simulations on a single-lane circular road investigate how these driving parameters affect traffic flow, average speed, and transitions between free-flow, synchronized-flow, and congested conditions. The results are compared with established models and observed highway traffic capacities.",
     "results": [
-      "Varies driving parameters within a CA simulation.",
-      "Examines sensitivity of traffic behavior to model settings.",
-      "Supports comparison of driving assumptions in traffic modeling."
+      "Adaptive acceleration increases simulated traffic flow by approximately 15–30% at medium densities and more than 30% at higher densities compared with fixed acceleration.",
+      "Reducing driver reaction time by 0.2 seconds increases traffic flow by up to 40% under non-free-flow conditions, whereas changing maximum acceleration rates has relatively little effect.",
+      "At a maximum velocity of 60 km/h and a reaction time of one second, the model reaches 2198 vehicles per hour at a density of 0.29 vehicles per cell. At 110 km/h, simulated maximum flow reaches approximately 2530 vehicles per hour."
     ],
     "important": true
   },
   {
     "id": 60,
     "citation": "Wang, Y., Jiang, Y., Wu, Y., & Yao, Z. (2024). Mitigating traffic oscillation through control of connected automated vehicles: A cellular automata simulation. Expert Systems with Applications, 235, 121275.",
-    "link": "https://scholar.google.com/scholar?q=Mitigating%20traffic%20oscillation%20through%20control%20of%20connected%20automated%20vehicles%3A%20A%20cellular%20automata%20simulation",
-    "summary": "Explores connected automated vehicle control as a way to reduce traffic oscillations using cellular automaton simulation.",
+    "link": "https://doi.org/10.1016/j.eswa.2023.121275",
+    "summary": "This paper proposes a platoon-based control strategy for connected automated vehicles using an extension of the Follower Stopper controller. Unlike conventional approaches where individual automated vehicles independently regulate traffic, the proposed strategy enables CAV platoons to execute coordinated traffic control. A cellular automaton simulation examines the strategy under different CAV penetration rates and vehicle densities. Performance is evaluated in terms of traffic efficiency, congestion, oscillation intensity, fuel consumption, and pollutant emissions.",
     "results": [
-      "Models traffic oscillations in a CA environment.",
-      "Examines control strategies involving connected automated vehicles.",
-      "Provides a framework for evaluating oscillation mitigation."
+      "The proposed platoon-based control strategy suppresses traffic oscillations and alleviates congestion, with its effectiveness depending on CAV penetration rate and traffic density.",
+      "Compared with the conventional Follower Stopper strategy, platoon-based control performs better in simulated traffic efficiency, congestion reduction, oscillation mitigation, fuel consumption, and pollutant emissions.",
+      "The conventional Follower Stopper strategy has diminishing benefits at high traffic densities, whereas the proposed platoon-based strategy remains effective over a wider density range and improves as CAV penetration increases."
     ],
     "important": true
   },
   {
     "id": 61,
     "citation": "Kinjo, K., & Tomoeda, A. (2025). Comparison of gap-based and flow-based control strategies using a new controlled stochastic cellular automaton model for traffic flow. Transportation Letters, 17(7), 1171–1181.",
-    "link": "https://scholar.google.com/scholar?q=Comparison%20of%20gap-based%20and%20flow-based%20control%20strategies%20using%20a%20new%20controlled%20stochastic%20cellular%20automaton%20model%20for%20traffic%20flow",
-    "summary": "Compares gap-based and flow-based traffic control strategies using a stochastic cellular automaton model.",
+    "link": "https://doi.org/10.1080/19427867.2024.2417150",
+    "summary": "This study proposes a controlled stochastic optimal velocity cellular automaton model to investigate the effects of vehicle control strategies on traffic flow. Two approaches are compared: gap-based control, which adjusts vehicle speeds to balance distances between neighboring vehicles, and flow-based control, which attempts to equalize local traffic flow. Numerical simulations examine how these strategies influence vehicle movement, traffic flow, and speed stability under different traffic densities and control strengths.",
     "results": [
-      "Introduces a controlled stochastic CA modeling approach.",
-      "Compares two traffic control strategies.",
-      "Examines how different control rules influence traffic flow."
+      "Both gap-based and flow-based control can improve traffic flow compared with uncontrolled traffic under suitable simulation conditions.",
+      "Gap-based control can reduce traffic flow below the uncontrolled baseline when control strength is weak, whereas flow-based control consistently improves traffic flow across the examined control strengths.",
+      "When both strategies produce similar traffic flow, flow-based control generally maintains a more stable vehicle-speed distribution across varying traffic densities."
     ],
     "important": true
   },
   {
     "id": 62,
     "citation": "Deng, X., Shao, Y., Song, J., & Wu, H. (2022). Traffic flow simulation of modified cellular automata model based on producer-consumer algorithm. PeerJ Computer Science, 8, e1102.",
-    "link": "https://scholar.google.com/scholar?q=Traffic%20flow%20simulation%20of%20modified%20cellular%20automata%20model%20based%20on%20producer-consumer%20algorithm",
-    "summary": "Combines a modified cellular automaton traffic model with a producer-consumer algorithm for traffic simulation.",
+    "link": "https://doi.org/10.7717/peerj-cs.1102",
+    "summary": "This study modifies the Nagel-Schreckenberg cellular automaton model using a producer-consumer algorithm to represent information sharing and vehicle updates in intelligent connected traffic. The proposed method introduces multibuffer information access and randomized vehicle updating instead of relying entirely on conventional synchronous updates. Simulations compare the original NaSch model, the modified model, and versions incorporating driver behavior using space-time diagrams, flow-density relationships, and vehicle-speed distributions.",
     "results": [
-      "Applies a producer-consumer approach to traffic simulation.",
-      "Modifies cellular automaton modeling for computational implementation.",
-      "Connects traffic modeling with simulation algorithm design."
+      "Compared with the original NaSch model, the modified model produces fewer and narrower congestion regions, with traffic jams dissipating more rapidly and free-flow regions expanding.",
+      "The original NaSch simulation reaches a maximum normalized traffic flow of approximately 0.49 at a density of 0.165. The modified model provides higher traffic flow before the critical density while maintaining approximately the same optimal density.",
+      "When driver behavior is included, the modified model reduces stop-and-go congestion, produces fewer stationary vehicles, and increases the proportion of vehicles traveling at higher speeds. The authors note that real-world traffic validation remains necessary."
     ],
     "important": true
   },
   {
     "id": 63,
     "citation": "Lu, T., Yang, X., Liu, C., & Lin, S. (2024). Modeling and Analysis of Platoon Dispersion of Autonomous and Manual Mixed Vehicles Based on Cellular Automata. In CICTP 2024 (pp. 257–267).",
-    "link": "https://scholar.google.com/scholar?q=Modeling%20and%20Analysis%20of%20Platoon%20Dispersion%20of%20Autonomous%20and%20Manual%20Mixed%20Vehicles%20Based%20on%20Cellular%20Automata",
-    "summary": "Uses cellular automata to model platoon dispersion in traffic containing autonomous and manually driven vehicles.",
+    "link": "https://doi.org/10.1061/9780784485484.025",
+    "summary": "This paper investigates platoon dispersion in mixed traffic containing autonomous and manually driven vehicles. A two-lane cellular automaton model is developed using principles from classical platoon dispersion models. The simulations examine how changes in the proportion of autonomous vehicles influence the spatial distribution and movement characteristics of mixed vehicle platoons. The study also considers how lane-changing behavior affects the utilization of road space and the development of platoon dispersion.",
     "results": [
-      "Represents mixed autonomous and manual vehicle platoons.",
-      "Examines the dispersion of vehicle groups.",
-      "Supports analysis of platoon stability in mixed traffic."
+      "The simulated platoon characteristics initially increase and subsequently decrease as the proportion of autonomous vehicles rises, indicating a nonlinear relationship between vehicle automation and platoon behavior.",
+      "Fully autonomous vehicle platoons exhibit distinct platoon characteristics, with particularly significant changes occurring as the autonomous vehicle proportion approaches 100%.",
+      "Lane-changing behavior improves the utilization of available road space within the simulated platoon, demonstrating its importance in modeling mixed autonomous and manually driven traffic."
     ],
     "important": true
   },
   {
     "id": 64,
     "citation": "Dong, Y., Li, R., Zhang, X., & Liu, K. (2019). Impact of Lane-Changing Behavior on Surrounding On-Line Bus Stops Based on Cellular Automation Model. In CICTP 2019 (pp. 5043–5054).",
-    "link": "https://scholar.google.com/scholar?q=Impact%20of%20Lane-Changing%20Behavior%20on%20Surrounding%20On-Line%20Bus%20Stops%20Based%20on%20Cellular%20Automation%20Model",
-    "summary": "Studies how lane-changing behavior affects traffic near on-line bus stops using a cellular automaton model.",
+    "link": "https://doi.org/10.1061/9780784482292.434",
+    "summary": "This study develops a three-lane cellular automaton model to investigate how bus stopping and departure activities influence surrounding traffic. The model focuses on lane-changing behavior near on-line bus stops, where buses temporarily obstruct traffic and cause nearby vehicles to adjust their movements. Simulations examine vehicle lane-changing rates, average speeds, traffic flow, and stability under different traffic densities and bus occupancy conditions. Particular attention is given to differences between the curbside lane and adjacent lanes.",
     "results": [
-      "Models lane changes around bus stops.",
-      "Examines interactions between bus-stop operations and surrounding vehicles.",
-      "Supports analysis of local congestion near bus stops."
+      "Bus entry and departure activities increase lane-changing activity near on-line bus stops and interfere with the surrounding traffic flow.",
+      "Vehicles in the curbside lane experience greater disturbances from bus operations, contributing to notable speed differences between neighboring traffic lanes.",
+      "The effects of bus stops on lane-changing rates, average speeds, traffic flow, and stability vary between lanes and depend on traffic density and bus occupancy conditions."
     ],
     "important": true
   },
   {
     "id": 65,
     "citation": "Xue, X., Cao, Y., Yang, Q., Yu, Y., & Li, R. (2022). Characteristics Analysis of Mixed Traffic Flow around Bus Stop under Cooperative Vehicle Infrastructure Environment. In CICTP 2022 (pp. 2485–2495).",
-    "link": "https://scholar.google.com/scholar?q=Characteristics%20Analysis%20of%20Mixed%20Traffic%20Flow%20around%20Bus%20Stop%20under%20Cooperative%20Vehicle%20Infrastructure%20Environment",
-    "summary": "Investigates mixed traffic flow around bus stops in a cooperative vehicle-infrastructure environment.",
+    "link": "https://doi.org/10.1061/9780784484265.234",
+    "summary": "This paper studies mixed traffic flow near bus stops under a cooperative vehicle-infrastructure environment. The authors develop a two-lane cellular automaton model based on the Nagel-Schreckenberg model, incorporating autonomous cars, manually driven cars, and conventional buses. The model combines Gipps safety-distance rules with adaptive cruise control behavior to represent interactions between different vehicle types. Simulations examine how vehicle composition, autonomous vehicle penetration, bus proportions, and bus-stop configurations influence road capacity.",
     "results": [
-      "Focuses on mixed traffic near bus stops.",
-      "Considers cooperative vehicle-infrastructure conditions.",
-      "Provides a basis for analyzing bus-stop traffic interactions."
+      "Road sections surrounding bus-bay stops demonstrate greater traffic capacity than sections containing curbside bus stops under the simulated conditions.",
+      "Increasing the proportion of autonomous cars improves traffic capacity, although a higher proportion of buses reduces the rate of this improvement.",
+      "Autonomous cars have a stronger influence on road capacity upstream of bus stops than downstream, indicating that automation benefits vary spatially around bus-stop facilities."
     ],
     "important": true
   },
   {
     "id": 66,
     "citation": "Wu, J., Chen, M., You, L., Xie, J., Chen, K., Sun, T., & Hao, R. (2024). A Cellular Automata Model for Urban Road Traffic Simulation with Consideration of Bus Stop and Mixed Traffic Flow. In CICTP 2024 (pp. 22–32).",
-    "link": "https://scholar.google.com/scholar?q=A%20Cellular%20Automata%20Model%20for%20Urban%20Road%20Traffic%20Simulation%20with%20Consideration%20of%20Bus%20Stop%20and%20Mixed%20Traffic%20Flow",
-    "summary": "Develops a cellular automaton model for urban road traffic that accounts for bus stops and mixed vehicle flows.",
+    "link": "https://doi.org/10.1061/9780784485484.003",
+    "summary": "This paper proposes a cellular automaton model for urban traffic containing connected autonomous cars, connected autonomous buses, regular cars, and conventional buses. The model extends the two-state safe-speed model to represent urban road conditions and reduce unrealistically large vehicle decelerations. A roadside bus-stop model is introduced in which only one bus can occupy the stop at a time. The researchers implement the simulation in Python and investigate how different proportions of connected autonomous cars and buses affect vehicle speeds, acceleration, congestion, and traffic safety.",
     "results": [
-      "Incorporates bus-stop effects into urban traffic simulation.",
-      "Models mixed traffic conditions.",
-      "Supports analysis of traffic interactions near public transport stops."
+      "The extended two-state safe-speed model addresses unusually large simulated decelerations, improving the representation of vehicle movement in urban traffic.",
+      "The simulations demonstrate that the penetration rates of connected autonomous cars and buses influence vehicle speeds, acceleration behavior, and congestion patterns.",
+      "The reported simulation results indicate that introducing connected autonomous cars and buses has the potential to improve urban traffic efficiency and safety around bus stops."
     ],
     "important": true
   },
   {
     "id": 67,
     "citation": "Díaz-del-Río, F., Ragel-Díaz-Jara, D., Morón-Fernández, M. J., Cagigas-Muñiz, D., Cascado-Caballero, D., Guisado-Lizar, J. L., & Jimenez-Moreno, G. (2023, December). Comparing the efficiency of traffic simulations using cellular automata. In International Conference on Simulation Tools and Techniques (pp. 182–194). Cham: Springer Nature Switzerland.",
-    "link": "https://scholar.google.com/scholar?q=Comparing%20the%20efficiency%20of%20traffic%20simulations%20using%20cellular%20automata",
-    "summary": "Compares the computational efficiency of cellular automaton approaches to traffic simulation.",
+    "link": "https://doi.org/10.1007/978-3-031-57523-5_14",
+    "summary": "This study compares computational approaches for cellular automaton traffic simulation, with an emphasis on execution speed, memory efficiency, and parallel processing. Using the Nagel-Schreckenberg model as a baseline, the researchers examine different implementations and optimizations intended to support large-scale microscopic traffic simulations. The investigation is motivated by applications requiring numerous simulation runs, including electric-vehicle charging infrastructure planning and urban traffic optimization. It compares interpreted and compiled programming languages, multicore execution, and techniques for reducing memory access.",
     "results": [
-      "Focuses on simulation efficiency.",
-      "Compares cellular automaton traffic simulation approaches.",
-      "Supports selection of computational methods for traffic modeling."
+      "Compiled implementations achieve major performance improvements: the Python implementation is approximately 70 times slower than the C++ implementation for a tested 64 Ki-cell configuration, with the difference reaching approximately 80 times for larger configurations.",
+      "Parallelization using OpenMP substantially improves simulation speed, with performance gains approaching the number of available processor cores under suitable conditions.",
+      "The optimized simulation running on a single 12-core computer achieves execution performance approaching that of considerably larger computing systems using interpreted implementations. The authors note that additional urban traffic features can reduce performance."
     ],
     "important": true
   },
   {
     "id": 68,
     "citation": "Zhang, F., Qi, L., Luan, W., Yang, R., & Guo, X. (2024, October). Simulation and Control of Slope Bottlenecks Based on Cellular Automata in Mixed Traffic Flow. In 2024 IEEE International Conference on Systems, Man, and Cybernetics (SMC) (pp. 1832–1837). IEEE.",
-    "link": "https://scholar.google.com/scholar?q=Simulation%20and%20Control%20of%20Slope%20Bottlenecks%20Based%20on%20Cellular%20Automata%20in%20Mixed%20Traffic%20Flow",
-    "summary": "Uses cellular automata to study slope-related bottlenecks and traffic control in mixed traffic conditions.",
+    "link": "https://scholar.google.com/scholar?q=Simulation+and+Control+of+Slope+Bottlenecks+Based+on+Cellular+Automata+in+Mixed+Traffic+Flow",
+    "summary": "This paper investigates traffic congestion at highway slope bottlenecks under mixed traffic conditions involving connected autonomous vehicles and human-driven vehicles. A cellular automaton traffic model incorporating CAV platooning is developed to simulate vehicle movements through slope bottlenecks. The authors propose a coordinated control strategy combining variable speed limits with vehicle platooning. The upstream road is divided into a variable-speed-limit zone and a platoon-formation zone, allowing traffic inflow to be regulated before vehicles enter the bottleneck.",
     "results": [
-      "Models traffic behavior near slope bottlenecks.",
-      "Considers mixed traffic conditions.",
-      "Examines control approaches for bottleneck management."
+      "The proposed variable-speed-limit strategy regulates the arrival of vehicles into the platooning zone, creating lower-density conditions that support vehicle coordination.",
+      "The hybrid platooning strategy organizes vehicles in mixed CAV and human-driven traffic before they encounter the slope bottleneck.",
+      "Simulation experiments show that combining variable speed limits and platooning improves traffic flow through slope bottlenecks and alleviates congestion compared with uncontrolled operation."
     ],
     "important": true
   },
   {
     "id": 69,
     "citation": "Trapeznikova, M. A., Yashina, M. V., & Garibyan, A. G. (2024, November). Software for visualization of cellular automata models in traffic flow analysis. In 2024 Intelligent Technologies and Electronic Devices in Vehicle and Road Transport Complex (TIRVED) (pp. 1–4). IEEE.",
-    "link": "https://scholar.google.com/scholar?q=Software%20for%20visualization%20of%20cellular%20automata%20models%20in%20traffic%20flow%20analysis",
-    "summary": "Presents software for visualizing cellular automaton traffic models and their simulated traffic behavior.",
+    "link": "https://doi.org/10.1109/TIRVED63561.2024.10769828",
+    "summary": "This conference paper concerns software for visualizing cellular automaton models used in traffic-flow analysis. The authors are associated with the TrafficFlowViz3D traffic visualization system, which was registered as software in October 2024. The available bibliographic information confirms the paper's focus on visualization software, but the original abstract and complete paper were not accessible for verification of its implementation details, experimental procedures, or evaluation findings.",
     "results": [
-      "Focuses on visualization of CA traffic simulations.",
-      "Supports interpretation of traffic model behavior.",
-      "Connects simulation software with traffic-flow analysis."
+      "The paper's publication and its focus on visualization software for cellular automaton traffic models are confirmed by the conference bibliographic record.",
+      "The authors registered a related visualization program named TrafficFlowViz3D in October 2024; this is independently documented but does not establish the experimental findings of the conference paper.",
+      "Specific performance measurements, validation experiments, and conclusions from the paper could not be verified from the accessible sources."
     ],
     "important": true
   },
   {
     "id": 70,
     "citation": "Qin, J., Gao, Y., Liu, Z., Wang, E., & Yang, T. (2026, January). Two-Lane Traffic Flow Simulation Based on an Improved Cellular Automaton Model. In 2026 3rd International Conference on Smart City and Information System (ICSCIS) (pp. 102–106). IEEE.",
-    "link": "https://scholar.google.com/scholar?q=Two-Lane%20Traffic%20Flow%20Simulation%20Based%20on%20an%20Improved%20Cellular%20Automaton%20Model",
-    "summary": "Presents an improved cellular automaton model for simulating traffic on two-lane roads.",
+    "link": "https://doi.org/10.1109/ICSCIS69190.2026.11453334",
+    "summary": "This paper develops an improved two-lane cellular automaton traffic model based on the classical Nagel-Schreckenberg framework. The model introduces a velocity-effect mechanism and lane-changing rules to represent interactions between vehicles on adjacent lanes. Using periodic boundary conditions, numerical simulations examine traffic evolution under different vehicle densities and model parameters. The researchers analyze spatiotemporal traffic patterns and fundamental diagrams to evaluate the model's ability to represent transitions between free-flow and congested conditions.",
     "results": [
-      "Focuses on two-lane traffic dynamics.",
-      "Uses modified cellular automaton rules for simulation.",
-      "Contributes a recent approach to multi-lane CA modeling."
+      "Introducing the velocity-effect mechanism and two-lane interactions improves the model's representation of the transition from free-flowing traffic to congestion.",
+      "The simulations reproduce spatiotemporal changes in traffic behavior and corresponding macroscopic flow-density relationships under varying vehicle densities.",
+      "Compared with the traditional NaSch model, the improved model provides a more reasonable description of traffic conditions at medium and high vehicle densities, addressing limitations of the original model."
     ],
     "important": true
   }
