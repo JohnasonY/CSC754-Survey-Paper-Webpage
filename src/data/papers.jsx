@@ -309,7 +309,7 @@ export const papers = [
       "Explains how to turn model measurements into real road measurements.",
       "Reviews both computer simulations and mathematical methods for studying traffic."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 27,
@@ -333,7 +333,7 @@ export const papers = [
       "Covers crashes caused by following, crossing, passing, and merging.",
       "Finds that checks against real traffic data are still limited in the reviewed studies."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 29,
@@ -345,7 +345,7 @@ export const papers = [
       "Finds that random changes in speed can create jams even without a road blockage.",
       "Provides a basic CA traffic model that many later papers extend."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 30,
@@ -405,7 +405,7 @@ export const papers = [
       "Identifies model settings that shape the graph of traffic flow against density.",
       "Examines why random behavior matters for realistic two-lane traffic."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 35,
@@ -489,7 +489,7 @@ export const papers = [
       "Finds good agreement between mathematical estimates and simulations, although the estimates are no longer exact.",
       "Finds a change to a fully jammed state in one of the two models."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 42,
@@ -501,7 +501,7 @@ export const papers = [
       "Finds a traffic density at which the city grid becomes fully jammed.",
       "Shows that this jamming point depends on the traffic-light cycle length."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 43,
@@ -609,7 +609,7 @@ export const papers = [
       "Shows that changing ramp and upstream demand changes the congested pattern and the probability of breakdown from free to synchronized flow.",
       "Calculates capacity reductions after breakdown and distinguishes the resulting patterns from those of fundamental-diagram CA models."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 52,
@@ -621,7 +621,7 @@ export const papers = [
       "Finds that longer pedestrian green time increases conflict opportunities while reducing conflict delay; crosswalk width has little influence on conflict counts or conflict delay in these simulations.",
       "Reports that conflict delay can account for up to 41% of total pedestrian crossing delay."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 53,
@@ -633,7 +633,7 @@ export const papers = [
       "Reports peak conflict counts of about 140 at 60.48 km/h versus about 40 at 30.24 km/h in the simulated speed-limit comparison.",
       "Finds wider sidewalks reduce conflicts in some pedestrian-density ranges, while peak counts remain around 130–140; the benefit is not uniform across all densities."
     ],
-    "important": false
+    "important": true
   },
   {
     "id": 54,
@@ -645,6 +645,198 @@ export const papers = [
       "Inverse TTC correlates with braking and steering reaction intensity at r = 0.732 for ellipse-based methods, compared with 0.381 for circles and 0.522 for rectangles.",
       "Provides a computational safety-analysis method rather than a CA movement model; validation within a complete traffic simulation remains future work."
     ],
-    "important": false
+    "important": true
+  },
+  {
+    "id": 55,
+    "citation": "Feng, T., Liu, K., & Liang, C. (2023). An improved cellular automata traffic flow model considering driving styles. Sustainability, 15(2), 952.",
+    "link": "https://scholar.google.com/scholar?q=An%20improved%20cellular%20automata%20traffic%20flow%20model%20considering%20driving%20styles",
+    "summary": "Examines how distinct driving styles can be represented in a modified cellular automaton traffic model.",
+    "results": [
+      "Incorporates driving-style differences into traffic simulation rules.",
+      "Studies how heterogeneous driver behavior influences simulated traffic flow.",
+      "Provides a basis for comparing traffic outcomes under different driver profiles."
+    ],
+    "important": true
+  },
+  {
+    "id": 56,
+    "citation": "Jiang, Y., Wang, S., Yao, Z., Zhao, B., & Wang, Y. (2021). A cellular automata model for mixed traffic flow considering the driving behavior of connected automated vehicle platoons. Physica A: Statistical Mechanics and its Applications, 582, 126262.",
+    "link": "https://scholar.google.com/scholar?q=A%20cellular%20automata%20model%20for%20mixed%20traffic%20flow%20considering%20the%20driving%20behavior%20of%20connected%20automated%20vehicle%20platoons",
+    "summary": "Develops a cellular automaton approach to traffic shared by human-driven vehicles and connected automated vehicle platoons.",
+    "results": [
+      "Represents platoon driving behavior in mixed traffic.",
+      "Examines interactions between automated platoons and conventional vehicles.",
+      "Supports simulation of how platooning changes overall traffic behavior."
+    ],
+    "important": true
+  },
+  {
+    "id": 57,
+    "citation": "Jiang, Y., Yi, Z., Xiao, G., Li, H., & Yao, Z. (2023). Modeling the effect of the platoon size of CAVs on mixed traffic flow: a cellular automaton method. Journal of Advanced Transportation, 2023(1), 2761858.",
+    "link": "https://scholar.google.com/scholar?q=Modeling%20the%20effect%20of%20the%20platoon%20size%20of%20CAVs%20on%20mixed%20traffic%20flow%3A%20a%20cellular%20automaton%20method",
+    "summary": "Uses a cellular automaton method to investigate the role of connected automated vehicle platoon size in mixed traffic.",
+    "results": [
+      "Treats platoon size as a variable in mixed-traffic simulations.",
+      "Investigates how CAV grouping affects surrounding traffic.",
+      "Provides a modeling framework for comparing platoon configurations."
+    ],
+    "important": true
+  },
+  {
+    "id": 58,
+    "citation": "Chen, T., Wang, Z., Xiang, J., & Li, H. (2024). Analysis of mixed traffic flow characteristics based on cellular automata model under lane management measures. Physica A: Statistical Mechanics and its Applications, 654, 130177.",
+    "link": "https://scholar.google.com/scholar?q=Analysis%20of%20mixed%20traffic%20flow%20characteristics%20based%20on%20cellular%20automata%20model%20under%20lane%20management%20measures",
+    "summary": "Investigates mixed traffic flow using a cellular automaton model under different lane management measures.",
+    "results": [
+      "Models mixed traffic under lane management policies.",
+      "Examines the relationship between lane organization and traffic characteristics.",
+      "Provides a simulation basis for evaluating lane management strategies."
+    ],
+    "important": true
+  },
+  {
+    "id": 59,
+    "citation": "Rigler, A., & Turk, G. (2025). The Influence of Different Driving Parameters on Traffic with a Cellular Automata Model. Applied Sciences, 15(23), 12404.",
+    "link": "https://scholar.google.com/scholar?q=The%20Influence%20of%20Different%20Driving%20Parameters%20on%20Traffic%20with%20a%20Cellular%20Automata%20Model",
+    "summary": "Studies how changes in driving parameters affect traffic behavior in a cellular automaton model.",
+    "results": [
+      "Varies driving parameters within a CA simulation.",
+      "Examines sensitivity of traffic behavior to model settings.",
+      "Supports comparison of driving assumptions in traffic modeling."
+    ],
+    "important": true
+  },
+  {
+    "id": 60,
+    "citation": "Wang, Y., Jiang, Y., Wu, Y., & Yao, Z. (2024). Mitigating traffic oscillation through control of connected automated vehicles: A cellular automata simulation. Expert Systems with Applications, 235, 121275.",
+    "link": "https://scholar.google.com/scholar?q=Mitigating%20traffic%20oscillation%20through%20control%20of%20connected%20automated%20vehicles%3A%20A%20cellular%20automata%20simulation",
+    "summary": "Explores connected automated vehicle control as a way to reduce traffic oscillations using cellular automaton simulation.",
+    "results": [
+      "Models traffic oscillations in a CA environment.",
+      "Examines control strategies involving connected automated vehicles.",
+      "Provides a framework for evaluating oscillation mitigation."
+    ],
+    "important": true
+  },
+  {
+    "id": 61,
+    "citation": "Kinjo, K., & Tomoeda, A. (2025). Comparison of gap-based and flow-based control strategies using a new controlled stochastic cellular automaton model for traffic flow. Transportation Letters, 17(7), 1171–1181.",
+    "link": "https://scholar.google.com/scholar?q=Comparison%20of%20gap-based%20and%20flow-based%20control%20strategies%20using%20a%20new%20controlled%20stochastic%20cellular%20automaton%20model%20for%20traffic%20flow",
+    "summary": "Compares gap-based and flow-based traffic control strategies using a stochastic cellular automaton model.",
+    "results": [
+      "Introduces a controlled stochastic CA modeling approach.",
+      "Compares two traffic control strategies.",
+      "Examines how different control rules influence traffic flow."
+    ],
+    "important": true
+  },
+  {
+    "id": 62,
+    "citation": "Deng, X., Shao, Y., Song, J., & Wu, H. (2022). Traffic flow simulation of modified cellular automata model based on producer-consumer algorithm. PeerJ Computer Science, 8, e1102.",
+    "link": "https://scholar.google.com/scholar?q=Traffic%20flow%20simulation%20of%20modified%20cellular%20automata%20model%20based%20on%20producer-consumer%20algorithm",
+    "summary": "Combines a modified cellular automaton traffic model with a producer-consumer algorithm for traffic simulation.",
+    "results": [
+      "Applies a producer-consumer approach to traffic simulation.",
+      "Modifies cellular automaton modeling for computational implementation.",
+      "Connects traffic modeling with simulation algorithm design."
+    ],
+    "important": true
+  },
+  {
+    "id": 63,
+    "citation": "Lu, T., Yang, X., Liu, C., & Lin, S. (2024). Modeling and Analysis of Platoon Dispersion of Autonomous and Manual Mixed Vehicles Based on Cellular Automata. In CICTP 2024 (pp. 257–267).",
+    "link": "https://scholar.google.com/scholar?q=Modeling%20and%20Analysis%20of%20Platoon%20Dispersion%20of%20Autonomous%20and%20Manual%20Mixed%20Vehicles%20Based%20on%20Cellular%20Automata",
+    "summary": "Uses cellular automata to model platoon dispersion in traffic containing autonomous and manually driven vehicles.",
+    "results": [
+      "Represents mixed autonomous and manual vehicle platoons.",
+      "Examines the dispersion of vehicle groups.",
+      "Supports analysis of platoon stability in mixed traffic."
+    ],
+    "important": true
+  },
+  {
+    "id": 64,
+    "citation": "Dong, Y., Li, R., Zhang, X., & Liu, K. (2019). Impact of Lane-Changing Behavior on Surrounding On-Line Bus Stops Based on Cellular Automation Model. In CICTP 2019 (pp. 5043–5054).",
+    "link": "https://scholar.google.com/scholar?q=Impact%20of%20Lane-Changing%20Behavior%20on%20Surrounding%20On-Line%20Bus%20Stops%20Based%20on%20Cellular%20Automation%20Model",
+    "summary": "Studies how lane-changing behavior affects traffic near on-line bus stops using a cellular automaton model.",
+    "results": [
+      "Models lane changes around bus stops.",
+      "Examines interactions between bus-stop operations and surrounding vehicles.",
+      "Supports analysis of local congestion near bus stops."
+    ],
+    "important": true
+  },
+  {
+    "id": 65,
+    "citation": "Xue, X., Cao, Y., Yang, Q., Yu, Y., & Li, R. (2022). Characteristics Analysis of Mixed Traffic Flow around Bus Stop under Cooperative Vehicle Infrastructure Environment. In CICTP 2022 (pp. 2485–2495).",
+    "link": "https://scholar.google.com/scholar?q=Characteristics%20Analysis%20of%20Mixed%20Traffic%20Flow%20around%20Bus%20Stop%20under%20Cooperative%20Vehicle%20Infrastructure%20Environment",
+    "summary": "Investigates mixed traffic flow around bus stops in a cooperative vehicle-infrastructure environment.",
+    "results": [
+      "Focuses on mixed traffic near bus stops.",
+      "Considers cooperative vehicle-infrastructure conditions.",
+      "Provides a basis for analyzing bus-stop traffic interactions."
+    ],
+    "important": true
+  },
+  {
+    "id": 66,
+    "citation": "Wu, J., Chen, M., You, L., Xie, J., Chen, K., Sun, T., & Hao, R. (2024). A Cellular Automata Model for Urban Road Traffic Simulation with Consideration of Bus Stop and Mixed Traffic Flow. In CICTP 2024 (pp. 22–32).",
+    "link": "https://scholar.google.com/scholar?q=A%20Cellular%20Automata%20Model%20for%20Urban%20Road%20Traffic%20Simulation%20with%20Consideration%20of%20Bus%20Stop%20and%20Mixed%20Traffic%20Flow",
+    "summary": "Develops a cellular automaton model for urban road traffic that accounts for bus stops and mixed vehicle flows.",
+    "results": [
+      "Incorporates bus-stop effects into urban traffic simulation.",
+      "Models mixed traffic conditions.",
+      "Supports analysis of traffic interactions near public transport stops."
+    ],
+    "important": true
+  },
+  {
+    "id": 67,
+    "citation": "Díaz-del-Río, F., Ragel-Díaz-Jara, D., Morón-Fernández, M. J., Cagigas-Muñiz, D., Cascado-Caballero, D., Guisado-Lizar, J. L., & Jimenez-Moreno, G. (2023, December). Comparing the efficiency of traffic simulations using cellular automata. In International Conference on Simulation Tools and Techniques (pp. 182–194). Cham: Springer Nature Switzerland.",
+    "link": "https://scholar.google.com/scholar?q=Comparing%20the%20efficiency%20of%20traffic%20simulations%20using%20cellular%20automata",
+    "summary": "Compares the computational efficiency of cellular automaton approaches to traffic simulation.",
+    "results": [
+      "Focuses on simulation efficiency.",
+      "Compares cellular automaton traffic simulation approaches.",
+      "Supports selection of computational methods for traffic modeling."
+    ],
+    "important": true
+  },
+  {
+    "id": 68,
+    "citation": "Zhang, F., Qi, L., Luan, W., Yang, R., & Guo, X. (2024, October). Simulation and Control of Slope Bottlenecks Based on Cellular Automata in Mixed Traffic Flow. In 2024 IEEE International Conference on Systems, Man, and Cybernetics (SMC) (pp. 1832–1837). IEEE.",
+    "link": "https://scholar.google.com/scholar?q=Simulation%20and%20Control%20of%20Slope%20Bottlenecks%20Based%20on%20Cellular%20Automata%20in%20Mixed%20Traffic%20Flow",
+    "summary": "Uses cellular automata to study slope-related bottlenecks and traffic control in mixed traffic conditions.",
+    "results": [
+      "Models traffic behavior near slope bottlenecks.",
+      "Considers mixed traffic conditions.",
+      "Examines control approaches for bottleneck management."
+    ],
+    "important": true
+  },
+  {
+    "id": 69,
+    "citation": "Trapeznikova, M. A., Yashina, M. V., & Garibyan, A. G. (2024, November). Software for visualization of cellular automata models in traffic flow analysis. In 2024 Intelligent Technologies and Electronic Devices in Vehicle and Road Transport Complex (TIRVED) (pp. 1–4). IEEE.",
+    "link": "https://scholar.google.com/scholar?q=Software%20for%20visualization%20of%20cellular%20automata%20models%20in%20traffic%20flow%20analysis",
+    "summary": "Presents software for visualizing cellular automaton traffic models and their simulated traffic behavior.",
+    "results": [
+      "Focuses on visualization of CA traffic simulations.",
+      "Supports interpretation of traffic model behavior.",
+      "Connects simulation software with traffic-flow analysis."
+    ],
+    "important": true
+  },
+  {
+    "id": 70,
+    "citation": "Qin, J., Gao, Y., Liu, Z., Wang, E., & Yang, T. (2026, January). Two-Lane Traffic Flow Simulation Based on an Improved Cellular Automaton Model. In 2026 3rd International Conference on Smart City and Information System (ICSCIS) (pp. 102–106). IEEE.",
+    "link": "https://scholar.google.com/scholar?q=Two-Lane%20Traffic%20Flow%20Simulation%20Based%20on%20an%20Improved%20Cellular%20Automaton%20Model",
+    "summary": "Presents an improved cellular automaton model for simulating traffic on two-lane roads.",
+    "results": [
+      "Focuses on two-lane traffic dynamics.",
+      "Uses modified cellular automaton rules for simulation.",
+      "Contributes a recent approach to multi-lane CA modeling."
+    ],
+    "important": true
   }
 ];
