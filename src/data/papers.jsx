@@ -683,15 +683,17 @@ export const papers = [
     ],
     "important": true
   },
+
   {
     "id": 58,
-    "citation": "Chen, T., Wang, Z., Xiang, J., & Li, H. (2024). Analysis of mixed traffic flow characteristics based on cellular automata model under lane management measures. Physica A: Statistical Mechanics and its Applications, 654, 130177.",
-    "link": "https://doi.org/10.1016/j.physa.2024.130177",
-    "summary": "This study develops a multilane cellular automaton model for mixed traffic consisting of human-driven vehicles, connected automated vehicles, and CAV platoons. The model incorporates lane-changing behavior, variation in human drivers' desired speeds, and the formation, splitting, and merging of CAV platoons. Simulations on a three-lane highway compare mixed lanes, CAV-dedicated lanes, and CAV-priority lanes. Traffic capacity, congestion characteristics, CACC degradation, and vehicle speeds are used to evaluate the effectiveness of these lane management strategies.",
+    "citation": "Zhang, J. X., & Wu, C. X. (2025). Active lane-changing model based on cellular automata to promote CAV platoon. Journal of King Saud University – Computer and Information Sciences, 37, Article 6.",
+    "link": "https://doi.org/10.1007/s44443-025-00009-2",
+    "summary": "This study develops a cellular automaton (CA) model incorporating cooperative lane-changing behavior and connected automated vehicle (CAV) platoon formation in mixed traffic. The model considers human-driven vehicles (HDVs), trucks, and CAVs on a three-lane highway with a temporary lane closure. It proposes an Active Lane-Changing with Platoon Formation (ALC-FP) strategy and compares it with a conventional accident-warning lane-changing (AW-LC) strategy. Simulations investigate the effects of CAV penetration rates and traffic demand on vehicle delay, congestion, platoon formation, and traffic safety.",
     "results": [
-      "Increasing the CAV penetration rate increases traffic capacity, optimal density, and jam density. The flow-density relationship changes from a triangular to a trapezoidal pattern when CAV penetration exceeds 60%.",
-      "CAV-dedicated lanes reduce CACC degradation but improve total traffic capacity only after the CAV proportion reaches a sufficient threshold.",
-      "At CAV penetration rates of 30% or less and normalized densities of 0.3 or less, CAV-priority lanes can meet traffic demand while reducing CACC degradation. Vehicles in priority lanes also achieve higher speeds than those in human-driven lanes."
+      "The proposed ALC-FP strategy significantly reduces vehicle delay. At 80% CAV penetration and traffic demand of 1400 vehicles/lane/hour, average vehicle delay decreases by 76.36% compared with the conventional AW-LC strategy.",
+      "Cooperative lane-changing improves traffic safety. At 80% CAV penetration and 2000 vehicles/lane/hour, time exposed to collision risk (TET) decreases from 1653 s to 432 s, representing a reduction of approximately 73.87%.",
+      "Higher CAV penetration promotes platoon formation, improves traffic stability, and reduces congestion. Under some simulated conditions with 80% CAV penetration, the congestion ratio approaches zero.",
+      "Traffic composition influences the effectiveness of the proposed strategy. Increasing the proportion of trucks increases vehicle delays and reduces platoon intensity, while low CAV penetration and high traffic demand limit the benefits of cooperative lane-changing."
     ],
     "important": true
   },
